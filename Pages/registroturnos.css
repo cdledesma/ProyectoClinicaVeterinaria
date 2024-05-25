@@ -1,0 +1,31 @@
+.img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url(img/653782d413b16.jpeg);
+}
+
+.contenedorimagen {
+    height: 700px;
+}
+
+.contenedortexto {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.contenedordelabarra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.barritadeseparacion {
+    border: solid 1px;
+    border-color: black;
+    width: 80%;
+    
+}
+
