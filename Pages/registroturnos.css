@@ -41,3 +41,14 @@
     width: 50%;
 }
 
+.contenedorformulario {
+    height: 700px;
+}
+
+.contenedortitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

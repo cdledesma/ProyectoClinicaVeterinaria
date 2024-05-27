@@ -24,12 +24,83 @@ let turnos = JSON.parse (localStorage.getItem("turnos")) || []
 
 //Capturar contenedor
 
-let contenedorformulario = document.getElementById  ("cform")
+let contenedorformulario = document.getElementById ("cform")
 console.log(contenedorformulario);
+
+//Funcion cargar formulario
+
+const cargarformulario = () => {
+    contenedorformulario.innerHTML = ""
+    let formulariotarjeta = document.createElement ("form");
+    formulariotarjeta.classList = "row";
+    let cardformularioregistro = ` 
+    <div class="my-3 col-xl-3">
+    <label for="exampleFormControlInput1" class="form-label">Nombre y apellido</label>
+    <input type="email" class="form-control" id="labelnombredueño" placeholder="">
+  </div>
+  <div class="my-3 col-xl-3">
+    <label for="exampleFormControlInput1" class="form-label">Dni</label>
+    <input type="email" class="form-control" id="labeldni" placeholder="">
+  </div>
+  <div class="my-3 col-xl-6 text-center">
+    <label for="exampleFormControlInput1" class="form-label">Nombre de la mascota</label>
+    <div class="text-center">
+    <input type="email" class="form-control" id="labelnombremascota" placeholder="">
+    </div>
+  </div>
+  <div class="my-3 col-xl-3">
+    <label for="exampleFormControlInput1" class="form-label">Email</label>
+    <input type="email" class="form-control" id="labelemail" placeholder="">
+  </div>
+  <div class="my-3 col-xl-3">
+    <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+    <input type="email" class="form-control" id="labeltelefono" placeholder="">
+  </div>
+  <div class="my-3 col-xl-3">
+    <label for="exampleFormControlInput1" class="form-label">Raza</label>
+    <input type="email" class="form-control" id="labelraza" placeholder="">
+  </div>
+  <div class="my-3 col-xl-3">
+    <label for="exampleFormControlInput1" class="form-label">Especie</label>
+    <input type="email" class="form-control" id="labelespecie" placeholder="">
+  </div>
+  <div class="mt-5 mb-3 col-xl-6">
+    <select class="form-select" aria-label="Default select example" id="selectservicio">
+        <option selected value="1">Elige un servicio</option>
+        <option value="Cirugia">Cirugia</option>
+        <option value="Esterilizacion">Esterilizacion</option>
+        <option value="Vacunacion">Vacunacion</option>
+        <option value="Desparacitacion">Desparacitacion</option>
+        <option value="Consulta">Consulta</option>
+        <option value="Ecografia">Ecografia</option>
+      </select>
+  </div>
+  <div class="mt-5 col-xl-6">
+    <select class="form-select" aria-label="Default select example" id="selectfecha">
+        <option selected value="1">Elige una fecha</option>
+        <option value="26/6/24">26/6/24</option>
+        <option value="27/6/24">27/6/24</option>
+        <option value="30/6/24">30/6/24</option>
+        <option value="1/7/24">1/7/24</option>
+        <option value="4/7/24">4/7/24</option>
+      </select>
+  </div>
+  <div class="text-center mt-5"><button type="button" class="btn btn-outline-dark btn-lg w-50 text-center" onclick="agregarturnos (event)">Guardar</button>
+  </div>
+     `
+    formulariotarjeta.innerHTML = cardformularioregistro
+    contenedorformulario.append (formulariotarjeta);
+}
+
+
+//Llamar funcion cargarformulario
+
+cargarformulario ()
 
 //Agregar turno
 
 const agregarturnos = (event) => {
+
     // detener submit
 
     event.preventDefault();
@@ -76,7 +147,7 @@ const mostrarturno = () => {
 
     turnonuevo.map ((item) => {
         let contenedorturnos = document.createElement ("div");
-        contenedorturnos.classList = "row p-5 my-5 rounded-5 bg-primary-subtle border border-black";
+        contenedorturnos.classList = "row";
         let cardturnos = ` 
         <h1 class="text-center my-2">Informacion del turno</h1>
         <div class="contenedordelabarra2 my-4">
@@ -121,8 +192,8 @@ const mostrarturno = () => {
         <div class="contenedordelabarra2 my-4">
           <p class="barritadeseparacion2"></p>
         </div>
-        <div class="text-center mt-3 col-xl-6"><button type="button" class="btn btn-outline-dark btn-lg w-50 text-center" >Cancelar</button></div>
-        <div class="text-center mt-3 col-xl-6"><button type="button" class="btn btn-outline-dark btn-lg w-50 text-center" >Enviar</button></div>
+        <div class="text-center mt-3 col-xl-6"><button type="button" class="btn btn-outline-dark btn-lg w-50 text-center" onclick="cancelarturno (event)" >Cancelar</button></div>
+        <div class="text-center mt-3 col-xl-6"><button type="button" class="btn btn-outline-dark btn-lg w-50 text-center" onclick = "cargarmensajedexito (event)">Enviar</button></div>
         `
         contenedorturnos.innerHTML = cardturnos
         contenedorformulario.append (contenedorturnos);
@@ -130,6 +201,41 @@ const mostrarturno = () => {
     
 }
 
+// Cancelar turnos
+
+const cancelarturno = () => {
+    let indiceturnos = turnos.findIndex ((turno) => {
+        return turno.id == id
+    })
+    console.log(indiceturnos);
+    turnos.splice (indiceturnos, 1)
+
+    localStorage.setItem ("turnos", JSON.stringify(turnos))
+
+    cargarformulario ()
+}
+
+const cargarmensajedexito = (event) => {
+    event.preventDefault ()
+    contenedorformulario.innerHTML = ""
+    let contenedormensajeregistro = document.createElement ("div");
+    contenedormensajeregistro.classList = "h-100 w-100";
+    let carddelmensaje = `
+        <div class="contenedordelabarra2 my-4">
+            <p class="barritadeseparacion2"></p>
+        </div>
+        <div class="h-75 w-100 contenedortitulo">
+            <div>
+            <h1 class="turnoregistrado text-center">¡Tu turno se ha registrado con exito!</h1>
+            </div>
+        </div>         
+        <div class="contenedordelabarra2 my-4">
+            <p class="barritadeseparacion2"></p>
+        </div>
+        `
+    contenedormensajeregistro.innerHTML = carddelmensaje
+    contenedorformulario.append (contenedormensajeregistro)
+}
 
 
 
