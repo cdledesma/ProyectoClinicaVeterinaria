@@ -32,61 +32,64 @@ console.log(contenedorformulario);
 const cargarformulario = () => {
     contenedorformulario.innerHTML = ""
     let formulariotarjeta = document.createElement ("form");
-    formulariotarjeta.classList = "row";
+    formulariotarjeta.classList = "row h-100 w-100";
     let cardformularioregistro = ` 
+    <div class="col-xl-6 text-center text-primary-emphasis"><h3>Datos del propietario</h3></div>
+    <div class="col-xl-6 text-center text-primary-emphasis"><h3> Datos de la mascota</h3></div>
     <div class="my-3 col-xl-3">
-    <label for="exampleFormControlInput1" class="form-label">Nombre y apellido</label>
-    <input type="email" class="form-control" id="labelnombredueño" placeholder="">
-  </div>
-  <div class="my-3 col-xl-3">
-    <label for="exampleFormControlInput1" class="form-label">Dni</label>
-    <input type="email" class="form-control" id="labeldni" placeholder="">
-  </div>
-  <div class="my-3 col-xl-6 text-center">
-    <label for="exampleFormControlInput1" class="form-label">Nombre de la mascota</label>
-    <div class="text-center">
-    <input type="email" class="form-control" id="labelnombremascota" placeholder="">
-    </div>
-  </div>
-  <div class="my-3 col-xl-3">
-    <label for="exampleFormControlInput1" class="form-label">Email</label>
-    <input type="email" class="form-control" id="labelemail" placeholder="">
-  </div>
-  <div class="my-3 col-xl-3">
-    <label for="exampleFormControlInput1" class="form-label">Telefono</label>
-    <input type="email" class="form-control" id="labeltelefono" placeholder="">
-  </div>
-  <div class="my-3 col-xl-3">
-    <label for="exampleFormControlInput1" class="form-label">Raza</label>
-    <input type="email" class="form-control" id="labelraza" placeholder="">
-  </div>
-  <div class="my-3 col-xl-3">
-    <label for="exampleFormControlInput1" class="form-label">Especie</label>
-    <input type="email" class="form-control" id="labelespecie" placeholder="">
-  </div>
-  <div class="mt-5 mb-3 col-xl-6">
-    <select class="form-select" aria-label="Default select example" id="selectservicio">
-        <option selected value="1">Elige un servicio</option>
-        <option value="Cirugia">Cirugia</option>
-        <option value="Esterilizacion">Esterilizacion</option>
-        <option value="Vacunacion">Vacunacion</option>
-        <option value="Desparacitacion">Desparacitacion</option>
-        <option value="Consulta">Consulta</option>
-        <option value="Ecografia">Ecografia</option>
-      </select>
-  </div>
-  <div class="mt-5 col-xl-6">
-    <select class="form-select" aria-label="Default select example" id="selectfecha">
-        <option selected value="1">Elige una fecha</option>
-        <option value="26/6/24">26/6/24</option>
-        <option value="27/6/24">27/6/24</option>
-        <option value="30/6/24">30/6/24</option>
-        <option value="1/7/24">1/7/24</option>
-        <option value="4/7/24">4/7/24</option>
-      </select>
-  </div>
-  <div class="text-center mt-5"><button type="button" class="btn btn-outline-dark btn-lg w-50 text-center" onclick="agregarturnos (event)">Guardar</button>
-  </div>
+        <label for="exampleFormControlInput1" class="form-label ">Nombre y apellido</label>
+        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelnombredueño" placeholder="Ingrese su nombre">
+      </div>
+      <div class="my-3 col-xl-3">
+        <label for="exampleFormControlInput1" class="form-label">Dni</label>
+        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labeldni" placeholder="Ingrese su dni">
+      </div>
+      <div class="my-3 col-xl-6">
+        <label for="exampleFormControlInput1" class="form-label">Nombre de la mascota</label>
+        <div class="text-center">
+        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelnombremascota" placeholder="Ingrese el nombre de la mascota">
+        </div>
+      </div>
+      <div class="my-3 col-xl-3">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelemail" placeholder="Ingrese su email">
+      </div>
+      <div class="my-3 col-xl-3">
+        <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labeltelefono" placeholder="Ingrese su telefono">
+      </div>
+      <div class="my-3 col-xl-3">
+        <label for="exampleFormControlInput1" class="form-label">Raza</label>
+        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelraza" placeholder="ingrese su email">
+      </div>
+      <div class="my-3 col-xl-3">
+        <label for="exampleFormControlInput1" class="form-label">Especie</label>
+        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelespecie" placeholder="Ingrese la especie">
+      </div>
+      <div class="mt-5 mb-3 col-xl-6 ">
+        <select class="form-select border border-primary-subtle rounded-5" aria-label="Default select example" id="selectservicio">
+            <option selected value="1">Elige un servicio</option>
+            <option value="Cirugia">Cirugia</option>
+            <option value="Esterilizacion">Esterilizacion</option>
+            <option value="Vacunacion">Vacunacion</option>
+            <option value="Desparacitacion">Desparacitacion</option>
+            <option value="Consulta">Consulta</option>
+            <option value="Ecografia">Ecografia</option>
+          </select>
+      </div>
+      <div class="mt-5 col-xl-6">
+        <select class="form-select border border-primary-subtle rounded-5" aria-label="Default select example" id="selectfecha">
+            <option selected value="1">Elige una fecha</option>
+            <option value="26/6/24">26/6/24</option>
+            <option value="27/6/24">27/6/24</option>
+            <option value="30/6/24">30/6/24</option>
+            <option value="1/7/24">1/7/24</option>
+            <option value="4/7/24">4/7/24</option>
+          </select>
+      </div>
+      <div class="text-center">
+        <button type="button" class="buttonvolverguardar btn fw-semibold w-50 rounded-5" onclick="agregarturnos ()">Guardar</button>
+      </div>
      `
     formulariotarjeta.innerHTML = cardformularioregistro
     contenedorformulario.append (formulariotarjeta);
