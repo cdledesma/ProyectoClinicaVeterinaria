@@ -1,5 +1,5 @@
-import { Publicidad } from "./publicidad.js";
-import { Footer } from "./footer.js";
+import { Publicidad } from "./Js/publicidad.js";
+import { Footer } from "./Js/footer.js";
 
 window.onload = function () {
   Publicidad();

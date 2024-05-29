@@ -1,12 +1,5 @@
-body{
-    background-color: #bb871e;
+body {
+    background-image: url(/Assets/Images/Fondo\ Pantalla\ Principal.jpg)
 }
-footer {
-    background-color:#A1D0CD;
-  }
-section{
-    background-color:#A1D0CD;
-}
-#ContenedorPrincipal{
-    background-color:#A1D0CD;
+.Navegador{
 }
