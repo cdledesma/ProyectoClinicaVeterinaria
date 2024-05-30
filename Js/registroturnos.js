@@ -88,7 +88,7 @@ const cargarformulario = () => {
           </select>
       </div>
       <div class="text-center">
-        <button type="button" class="buttonvolverguardar btn fw-semibold w-50 rounded-5" onclick="agregarturnos ()">Guardar</button>
+        <button type="button" class="buttonvolverguardar btn fw-semibold w-50 rounded-5" onclick="agregarturnos (event)">Guardar</button>
       </div>
      `
     formulariotarjeta.innerHTML = cardformularioregistro
@@ -98,7 +98,7 @@ const cargarformulario = () => {
 
 //Llamar funcion cargarformulario
 
-cargarformulario ()
+// cargarformulario ()
 
 //Agregar turno
 

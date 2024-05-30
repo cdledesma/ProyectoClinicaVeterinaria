@@ -68,4 +68,16 @@ body {
     align-items: center;
 }
 
+@media (max-width : 768px) {
+    form {
+        font-size: 15px;
+    }
+}
+
+@media (max-width :368px) {
+    .contenedorformulario {
+       height: 1100px;
+    }
+}
+
 
