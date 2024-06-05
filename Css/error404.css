@@ -6,7 +6,6 @@
     position: absolute;
 }
 #contenedorHijo{
-    ;
     text-align: center;
     margin-left: 10%;
     padding: 5px;
@@ -19,7 +18,6 @@
 }
 
 #contenedorHijo2{
-    
     background-color: #ECB543;   
     display: flex;
     width: 70%;
