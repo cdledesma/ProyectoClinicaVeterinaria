@@ -27,6 +27,24 @@ let turnos = JSON.parse (localStorage.getItem("turnos")) || []
 let contenedorformulario = document.getElementById ("cform")
 console.log(contenedorformulario);
 
+// Funcion modal
+
+const myModal1 = new bootstrap.Modal (document.getElementById("registroturnosmodal1"));
+
+const myModal2 = new bootstrap.Modal (document.getElementById("registroturnosmodal2"));
+
+const myModal3 = new bootstrap.Modal (document.getElementById("registroturnosmodal3"));
+
+//Llamar modal
+
+const llamarmodal = (event) => {
+  event.preventDefault ()
+  cargarformulario ()
+  myModal1.show ()
+}
+
+
+
 //Funcion cargar formulario
 
 const cargarformulario = () => {
@@ -34,75 +52,79 @@ const cargarformulario = () => {
     let formulariotarjeta = document.createElement ("form");
     formulariotarjeta.classList = "row h-100 w-100";
     let cardformularioregistro = ` 
-    <div class="col-xl-6 text-center text-primary-emphasis"><h3>Datos del propietario</h3></div>
-    <div class="col-xl-6 text-center text-primary-emphasis"><h3> Datos de la mascota</h3></div>
-    <div class="my-3 col-xl-3">
-        <label for="exampleFormControlInput1" class="form-label ">Nombre y apellido</label>
-        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelnombredueño" placeholder="Ingrese su nombre">
-      </div>
-      <div class="my-3 col-xl-3">
-        <label for="exampleFormControlInput1" class="form-label">Dni</label>
-        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labeldni" placeholder="Ingrese su dni">
-      </div>
-      <div class="my-3 col-xl-6">
-        <label for="exampleFormControlInput1" class="form-label">Nombre de la mascota</label>
-        <div class="text-center">
-        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelnombremascota" placeholder="Ingrese el nombre de la mascota">
-        </div>
-      </div>
-      <div class="my-3 col-xl-3">
-        <label for="exampleFormControlInput1" class="form-label">Email</label>
-        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelemail" placeholder="Ingrese su email">
-      </div>
-      <div class="my-3 col-xl-3">
-        <label for="exampleFormControlInput1" class="form-label">Telefono</label>
-        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labeltelefono" placeholder="Ingrese su telefono">
-      </div>
-      <div class="my-3 col-xl-3">
-        <label for="exampleFormControlInput1" class="form-label">Raza</label>
-        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelraza" placeholder="ingrese su email">
-      </div>
-      <div class="my-3 col-xl-3">
-        <label for="exampleFormControlInput1" class="form-label">Especie</label>
-        <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelespecie" placeholder="Ingrese la especie">
-      </div>
-      <div class="mt-5 mb-3 col-xl-6 ">
-        <select class="form-select border border-primary-subtle rounded-5" aria-label="Default select example" id="selectservicio">
-            <option selected value="1">Elige un servicio</option>
-            <option value="Cirugia">Cirugia</option>
-            <option value="Esterilizacion">Esterilizacion</option>
-            <option value="Vacunacion">Vacunacion</option>
-            <option value="Desparacitacion">Desparacitacion</option>
-            <option value="Consulta">Consulta</option>
-            <option value="Ecografia">Ecografia</option>
-          </select>
-      </div>
-      <div class="mt-5 col-xl-6">
-        <select class="form-select border border-primary-subtle rounded-5" aria-label="Default select example" id="selectfecha">
-            <option selected value="1">Elige una fecha</option>
-            <option value="26/6/24">26/6/24</option>
-            <option value="27/6/24">27/6/24</option>
-            <option value="30/6/24">30/6/24</option>
-            <option value="1/7/24">1/7/24</option>
-            <option value="4/7/24">4/7/24</option>
-          </select>
-      </div>
-      <div class="text-center">
-        <button type="button" class="buttonvolverguardar btn fw-semibold w-50 rounded-5" onclick="agregarturnos (event)">Guardar</button>
-      </div>
+    <div class="col-xl-6 col-md-6">
+              <div class="col-xl-12 col-md-12 text-center text-primary-emphasis mb-5"><h3 class="tituloform">Datos del propietario</h3></div>
+              <div class="my-3">
+                <label for="exampleFormControlInput1" class="form-label ">Nombre y apellido</label>
+                <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelnombredueño" placeholder="Ingrese su nombre">
+              </div>
+              <div class="my-3">
+                <label for="exampleFormControlInput1" class="form-label">Dni</label>
+                <input type="email" class="form-control border border-primary-subtle rounded-5" id="labeldni" placeholder="Ingrese su dni">
+              </div>
+              <div class="my-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelemail" placeholder="Ingrese su email">
+              </div>
+              <div class="my-3">
+              <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+              <input type="email" class="form-control border border-primary-subtle rounded-5" id="labeltelefono" placeholder="Ingrese su telefono">
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-md-6">
+              <div class="col-xl-12 col-md-12 mb-5 text-center text-primary-emphasis"><h3 class="tituloform"> Datos de la mascota</h3></div>
+              <div class="my-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre de la mascota</label>
+                <div class="text-center">
+                <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelnombremascota" placeholder="Ingrese el nombre de la mascota">
+               </div>
+               <div class="my-3">
+                <label for="exampleFormControlInput1" class="form-label">Raza</label>
+                <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelraza" placeholder="ingrese su email">
+              </div>
+              <div class="my-3">
+                <label for="exampleFormControlInput1" class="form-label">Especie</label>
+                <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelespecie" placeholder="Ingrese la especie">
+              </div>
+              </div>
+           </div>
+                     
+              <div class="mt-5 mb-3 col-xl-6 col-md-6">
+                <select class="form-select border border-primary-subtle rounded-5" aria-label="Default select example" id="selectservicio">
+                    <option selected value="1">Elige un servicio</option>
+                    <option value="Cirugia">Cirugia</option>
+                    <option value="Esterilizacion">Esterilizacion</option>
+                    <option value="Vacunacion">Vacunacion</option>
+                    <option value="Desparacitacion">Desparacitacion</option>
+                    <option value="Consulta">Consulta</option>
+                    <option value="Ecografia">Ecografia</option>
+                  </select>
+              </div>
+              <div class="mt-5 col-xl-6 col-md-6">
+                <select class="form-select border border-primary-subtle rounded-5" aria-label="Default select example" id="selectfecha">
+                    <option selected value="1">Elige una fecha</option>
+                    <option value="26/6/24">26/6/24</option>
+                    <option value="27/6/24">27/6/24</option>
+                    <option value="30/6/24">30/6/24</option>
+                    <option value="1/7/24">1/7/24</option>
+                    <option value="4/7/24">4/7/24</option>
+                  </select>
+              </div>
+              <div class="text-center">
+                <button type="button" class="buttonguardarformulario1 btn fw-semibold w-50 rounded-5" onclick="agregarturnos (event)">Guardar</button>
+              </div>
      `
     formulariotarjeta.innerHTML = cardformularioregistro
     contenedorformulario.append (formulariotarjeta);
 }
 
 
-//Llamar funcion cargarformulario
-
-// cargarformulario ()
-
 //Agregar turno
 
 const agregarturnos = (event) => {
+
+  
 
     // detener submit
 
@@ -118,7 +140,10 @@ const agregarturnos = (event) => {
     let servicio = document.getElementById ("selectservicio").value;
     let fecha = document.getElementById ("selectfecha").value;
     let tipo = document.getElementById ("labelespecie").value;
-    if (dueño.length > 5 ) {
+
+    // Validaciones
+
+    if (dueño.length > 5 && dni.length >5 && mascota.length > 5 &&  email.length > 5 && telefono.length > 5 && raza.length > 5 && tipo.length > 5) {
 
         turnos.push (new turno (dueño, dni, email, telefono, mascota, raza, tipo, servicio, fecha, id=new Date().getTime()))
         localStorage.setItem ("turnos", JSON.stringify (turnos));
@@ -132,6 +157,7 @@ const agregarturnos = (event) => {
         document.getElementById ("selectfecha").value ="1";
         document.getElementById ("labelespecie").value ="";
 
+
         mostrarturno ()
        
     } 
@@ -141,62 +167,64 @@ const agregarturnos = (event) => {
 // Imprimir en pantalla el turno (array)
 
 const mostrarturno = () => {
-    contenedorformulario.innerHTML = "";
-
+    contenedorformulario.innerHTML = ""
     let turnonuevo = turnos.filter ((turno)=> {
         return turno.id == id
     }) 
-    console.log(turnonuevo);
 
     turnonuevo.map ((item) => {
         let contenedorturnos = document.createElement ("div");
-        contenedorturnos.classList = "row";
         let cardturnos = ` 
-        <h1 class="text-center my-2">Informacion del turno</h1>
-        <div class="contenedordelabarra2 my-4">
-        <p class="barritadeseparacion2"></p>
+        <h1 class="text-center mb-4 mt-2 text-primary-emphasis mb-">Informacion del turno</h1>
+        <div class="border boder-secondary border-4 rounded-5 border-primary-subtle shadow-lg bg-primary-subtle">
+        <div class="row p-5 my-2 padredelcontenedordelacard">
+        <div class="my-3 col-xl-4 col-md-4 text-center contenedordelacard">
+          <h2 class="fs-4 fw-bold text-primary-emphasis titulocardinfo">Nombre y apellido</h2>
+          <p class="fs-5 fw-semibold mt-4 parrafocard">${item.dueño}</p>
         </div>
-        <div class="my-3 col-xl-4 text-center">
-          <h2 class="fs-4 fw-bold">Nombre y apellido</h2>
-          <p class="fs-5 fw-semibold mt-4">${item.dueño}</p>
+        <div class="my-3 col-xl-4 col-md-4 text-center contenedordelacard">
+          <h2 class="fs-5 fw-bold text-primary-emphasis titulocardinfo">Dni</h2>
+          <p class="fs-5 fw-semibold mt-4 parrafocard">${item.dni}</p>
         </div>
-        <div class="my-3 col-xl-4 text-center">
-          <h2 class="fs-5 fw-bold">Dni</h2>
-          <p class="fs-5 fw-semibold mt-4">${item.dni}</p>
+        <div class="my-3 col-xl-4 col-md-4 text-center contenedordelacard">
+          <h2 class="fs-5 fw-bold text-primary-emphasis titulocardinfo">Nombre de mascota</h2>
+          <p class="fs-5 fw-semibold mt-4 parrafocard">${item.mascota}</p>
         </div>
-        <div class="my-3 col-xl-4 text-center">
-          <h2 class="fs-5 fw-bold">Nombre de mascota</h2>
-          <p class="fs-5 fw-semibold mt-4">${item.mascota}</p>
+        <div class="my-3 col-xl-4 col-md-4 text-center contenedordelacard" >
+          <h2 class="fs-5 fw-bold text-primary-emphasis titulocardinfo">Email</h2>
+          <p class="fs-5 fw-semibold mt-4 parrafocard">${item.email}</p>
         </div>
-        <div class="my-3 col-xl-4 text-center">
-          <h2 class="fs-5 fw-bold">Email</h2>
-          <p class="fs-5 fw-semibold mt-4">${item.email}</p>
+        <div class="my-3 col-xl-4 col-md-4 text-center contenedordelacard">
+          <h2 class="fs-5 fw-bold text-primary-emphasis titulocardinfo">Telefeno</h2>
+          <p class="fs-5 fw-semibold mt-4 parrafocard">${item.telefono}</p>
         </div>
-        <div class="my-3 col-xl-4 text-center">
-          <h2 class="fs-5 fw-bold">Telefeno</h2>
-          <p class="fs-5 fw-semibold mt-4">${item.telefono}</p>
+        <div class="my-3 col-xl-4 col-md-4 text-center contenedordelacard">
+          <h2 class="fs-5 fw-bold text-primary-emphasis titulocardinfo">Raza</h2>
+          <p class="fs-5 fw-semibold mt-4 parrafocard">${item.raza}</p>
         </div>
-        <div class="my-3 col-xl-4 text-center">
-          <h2 class="fs-5 fw-bold">Raza</h2>
-          <p class="fs-5 fw-semibold mt-4">${item.raza}</p>
+        <div class="my-3 col-xl-4 col-md-4 text-center contenedordelacard">
+          <h2 class="fs-5 fw-bold text-primary-emphasis titulocardinfo">Especie</h2>
+          <p class="fs-5 fw-semibold mt-4 parrafocard">${item.tipo}</p>
         </div>
-        <div class="my-3 col-xl-4 text-center">
-          <h2 class="fs-5 fw-bold">Especie</h2>
-          <p class="fs-5 fw-semibold mt-4">${item.tipo}</p>
+        <div class="my-3 col-xl-4 col-md-4 text-center contenedordelacard">
+          <h2 class="fs-5 fw-bold text-primary-emphasis titulocardinfo">Servicio</h2>
+          <p class="fs-5 fw-semibold mt-4 parrafocard">${item.servicio}</p>
         </div>
-        <div class="my-3 col-xl-4 text-center">
-          <h2 class="fs-5 fw-bold">Servicio</h2>
-          <p class="fs-5 fw-semibold mt-4">${item.servicio}</p>
+        <div class="my-3 col-xl-4 col-md-4 text-center contenedordelacard">
+          <h2 class="fs-5 fw-bold text-primary-emphasis titulocardinfo">Fecha</h2>
+          <p class="fs-5 fw-semibold mt-4 parrafocard">${item.fecha}</p>
         </div>
-        <div class="my-3 col-xl-4 text-center ">
-          <h2 class="fs-5 fw-bold">Fecha</h2>
-          <p class="fs-5 fw-semibold mt-4">${item.fecha}</p>
+      </div>
+     
+      </div>
+      <div class="row text-center mt-5 contenedorbotonescard">
+        <div class="col-xl-6 col-md-6">
+          <button type="button" class="buttoncancelar btn fw-semibold w-75 rounded-5" onclick="cancelarturno (event)">Cancelar</button>
         </div>
-        <div class="contenedordelabarra2 my-4">
-          <p class="barritadeseparacion2"></p>
+        <div class="col-xl-6 col-md-6">
+          <button type="button" class="buttonenviarguardar btn fw-semibold w-75 rounded-5" onclick="cargarmensajedexito (event)">Enviar</button>
         </div>
-        <div class="text-center mt-3 col-xl-6"><button type="button" class="btn btn-outline-dark btn-lg w-50 text-center" onclick="cancelarturno (event)" >Cancelar</button></div>
-        <div class="text-center mt-3 col-xl-6"><button type="button" class="btn btn-outline-dark btn-lg w-50 text-center" onclick = "cargarmensajedexito (event)">Enviar</button></div>
+      </div>
         `
         contenedorturnos.innerHTML = cardturnos
         contenedorformulario.append (contenedorturnos);
@@ -224,17 +252,15 @@ const cargarmensajedexito = (event) => {
     let contenedormensajeregistro = document.createElement ("div");
     contenedormensajeregistro.classList = "h-100 w-100";
     let carddelmensaje = `
-        <div class="contenedordelabarra2 my-4">
-            <p class="barritadeseparacion2"></p>
-        </div>
-        <div class="h-75 w-100 contenedortitulo">
-            <div>
-            <h1 class="turnoregistrado text-center">¡Tu turno se ha registrado con exito!</h1>
-            </div>
-        </div>         
-        <div class="contenedordelabarra2 my-4">
-            <p class="barritadeseparacion2"></p>
-        </div>
+    <div class="h-100 w-100 contenedortitulo">
+    <div class="bg-primary-subtle rounded-5 p-5 shadow-lg">
+      <div>
+        <h1 class="turnoregistrado text-center text-primary-emphasis">¡Tu turno se ha registrado con exito!</h1>
+      </div>
+    </div>
+</div>         
+ 
+
         `
     contenedormensajeregistro.innerHTML = carddelmensaje
     contenedorformulario.append (contenedormensajeregistro)
