@@ -25,7 +25,14 @@ let turnos = JSON.parse (localStorage.getItem("turnos")) || []
 //Capturar contenedor
 
 let contenedorformulario = document.getElementById ("cform")
-console.log(contenedorformulario);
+
+
+let contenedorformulario2 = document.getElementById ("cform2")
+
+let contenedorformulario3 = document.getElementById ("cform3")
+
+
+
 
 // Funcion modal
 
@@ -37,11 +44,30 @@ const myModal3 = new bootstrap.Modal (document.getElementById("registroturnosmod
 
 //Llamar modal
 
-const llamarmodal = (event) => {
+const llamarmodal1 = (event) => {
   event.preventDefault ()
   cargarformulario ()
   myModal1.show ()
 }
+
+const llamarmodalalcancelar = () => {
+  cargarformulario ()
+  myModal1.show ()
+}
+
+const llamarmodal2 = () => {
+  mostrarturno ()
+  myModal2.show ()
+}
+
+
+const llamarmodal3 = (event) => {
+    event.preventDefault ()
+    myModal2.hide ()
+    cargarmensajedexito ()
+    myModal3.show ()
+}
+
 
 
 
@@ -81,7 +107,7 @@ const cargarformulario = () => {
                </div>
                <div class="my-3">
                 <label for="exampleFormControlInput1" class="form-label">Raza</label>
-                <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelraza" placeholder="ingrese su email">
+                <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelraza" placeholder="Ingrese la raza">
               </div>
               <div class="my-3">
                 <label for="exampleFormControlInput1" class="form-label">Especie</label>
@@ -92,7 +118,7 @@ const cargarformulario = () => {
                      
               <div class="mt-5 mb-3 col-xl-6 col-md-6">
                 <select class="form-select border border-primary-subtle rounded-5" aria-label="Default select example" id="selectservicio">
-                    <option selected value="1">Elige un servicio</option>
+                    <option selected value="">Elige un servicio</option>
                     <option value="Cirugia">Cirugia</option>
                     <option value="Esterilizacion">Esterilizacion</option>
                     <option value="Vacunacion">Vacunacion</option>
@@ -103,7 +129,7 @@ const cargarformulario = () => {
               </div>
               <div class="mt-5 col-xl-6 col-md-6">
                 <select class="form-select border border-primary-subtle rounded-5" aria-label="Default select example" id="selectfecha">
-                    <option selected value="1">Elige una fecha</option>
+                    <option selected value="">Elige una fecha</option>
                     <option value="26/6/24">26/6/24</option>
                     <option value="27/6/24">27/6/24</option>
                     <option value="30/6/24">30/6/24</option>
@@ -124,10 +150,7 @@ const cargarformulario = () => {
 
 const agregarturnos = (event) => {
 
-  
-
     // detener submit
-
     event.preventDefault();
 
     //capturar valores
@@ -143,31 +166,53 @@ const agregarturnos = (event) => {
 
     // Validaciones
 
-    if (dueño.length > 5 && dni.length >5 && mascota.length > 5 &&  email.length > 5 && telefono.length > 5 && raza.length > 5 && tipo.length > 5) {
+      if (dueño.length >= 5 && dni.length >=5 && mascota.length >= 3 &&  email.length >= 5 && telefono.length >= 5 && raza.length >= 4 && tipo.length >= 5 && !servicio == "" && !fecha == "" ) {
+        if ((email.match(/([a-z]\w+@[a-z]+\.[a-z]{2,5})/))) {
+          if (telefono.match(/^(?=\w*\d)/)) {
+            // Ver que hacer con las mayusculas ya que no queda estetico cuando se imprime el turno
+            turnos.push (new turno (dueño.toUpperCase(), dni, email.toUpperCase(), telefono, mascota.toUpperCase(), raza.toUpperCase(), tipo.toUpperCase(), servicio.toUpperCase(), fecha, id=new Date().getTime()))
+            localStorage.setItem ("turnos", JSON.stringify (turnos));
+            document.getElementById ("labelnombredueño").value = "";
+            document.getElementById ("labeldni").value = "";
+            document.getElementById ("labelnombremascota").value = "";
+            document.getElementById ("labelemail").value = "";
+            document.getElementById ("labeltelefono").value = "";
+            document.getElementById ("labelraza").value = "";
+            document.getElementById ("selectservicio").value= "";
+            document.getElementById ("selectfecha").value ="";
+            document.getElementById ("labelespecie").value ="";
 
-        turnos.push (new turno (dueño, dni, email, telefono, mascota, raza, tipo, servicio, fecha, id=new Date().getTime()))
-        localStorage.setItem ("turnos", JSON.stringify (turnos));
-        document.getElementById ("labelnombredueño").value = "";
-        document.getElementById ("labeldni").value = "";
-        document.getElementById ("labelnombremascota").value = "";
-        document.getElementById ("labelemail").value = "";
-        document.getElementById ("labeltelefono").value = "";
-        document.getElementById ("labelraza").value = "";
-        document.getElementById ("selectservicio").value= "1";
-        document.getElementById ("selectfecha").value ="1";
-        document.getElementById ("labelespecie").value ="";
-
-
-        mostrarturno ()
-       
-    } 
+            myModal1.hide ()
+            llamarmodal2 ()  
+          }
+          else {
+            Swal.fire ({
+              text: "Telefono y Dni no puede contener letras",
+              icon: 'warning'
+            })
+          }         
+        } 
+        
+        else {
+          Swal.fire ({
+            text: "El email debe contener un @",
+            icon: 'warning'
+          })
+        }
+    } else {
+        Swal.fire ({
+          text: "Complete todos los campos",
+          icon: 'warning'
+      })
     
+}
+
 }
 
 // Imprimir en pantalla el turno (array)
 
 const mostrarturno = () => {
-    contenedorformulario.innerHTML = ""
+    contenedorformulario2.innerHTML = ""
     let turnonuevo = turnos.filter ((turno)=> {
         return turno.id == id
     }) 
@@ -222,19 +267,20 @@ const mostrarturno = () => {
           <button type="button" class="buttoncancelar btn fw-semibold w-75 rounded-5" onclick="cancelarturno (event)">Cancelar</button>
         </div>
         <div class="col-xl-6 col-md-6">
-          <button type="button" class="buttonenviarguardar btn fw-semibold w-75 rounded-5" onclick="cargarmensajedexito (event)">Enviar</button>
+          <button type="button" class="buttonenviarguardar btn fw-semibold w-75 rounded-5" onclick="llamarmodal3 (event)">Enviar</button>
         </div>
       </div>
         `
         contenedorturnos.innerHTML = cardturnos
-        contenedorformulario.append (contenedorturnos);
+        contenedorformulario2.append (contenedorturnos);
     })
     
 }
 
 // Cancelar turnos
 
-const cancelarturno = () => {
+const cancelarturno = (event) => {
+  event.preventDefault ()
     let indiceturnos = turnos.findIndex ((turno) => {
         return turno.id == id
     })
@@ -243,29 +289,27 @@ const cancelarturno = () => {
 
     localStorage.setItem ("turnos", JSON.stringify(turnos))
 
-    cargarformulario ()
+    myModal2.hide ()
+    llamarmodalalcancelar ()
 }
 
-const cargarmensajedexito = (event) => {
-    event.preventDefault ()
-    contenedorformulario.innerHTML = ""
+const cargarmensajedexito = () => {
+    contenedorformulario3.innerHTML = ""
     let contenedormensajeregistro = document.createElement ("div");
     contenedormensajeregistro.classList = "h-100 w-100";
     let carddelmensaje = `
-    <div class="h-100 w-100 contenedortitulo">
+    <div class="h-75 w-100 contenedortitulo">
     <div class="bg-primary-subtle rounded-5 p-5 shadow-lg">
       <div>
         <h1 class="turnoregistrado text-center text-primary-emphasis">¡Tu turno se ha registrado con exito!</h1>
-      </div>
-    </div>
-</div>         
- 
-
-        `
+      </div>      
+    </div>  
+  </div>  
+  <div class="w-100 text-center">
+    <button type="button" class="buttonenviarguardar btn fw-semibold w-25 rounded-5" onclick="myModal3.hide ()">Cerrar</button>
+  </div>   
+    `
     contenedormensajeregistro.innerHTML = carddelmensaje
-    contenedorformulario.append (contenedormensajeregistro)
+    contenedorformulario3.append (contenedormensajeregistro)
 }
-
-
-
 
