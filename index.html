@@ -16,7 +16,7 @@
       src="https://kit.fontawesome.com/82f0997eec.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/proyecto2/style.css" />
     <title>ProyectoClinicaVeterinaria</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -31,19 +31,21 @@
       <!-- Navbar -->
       <div class="container-fluid">
         <article class="row">
-          <div class="col-xl-10 col-md-12 col-sm-12">
-      <nav id="Navegador" class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid mx-5 d-flex justify-content-between">
-          <div>
-            <a class="navbar-brand" href="/index.html"
+          <div class="col-xl-12 col-md-12 col-sm-12">
+      <nav id="Navegador" class="navbar navbar-expand-lg">
+        <div class="container-fluid mx-2 d-flex justify-content-space-around">
+          <div class="d-flex">
+            <div id="logo">
+            <a class="navbar-brand" href="/proyecto2/index.html"
               ><img
-                src="/Assets/Logo/Logo.jpeg"
+                src="/proyecto2/Assets/Logo/Logo Veterinaria.png"
                 alt="Clinica Veterinaria"
                 class="w-25"
               />
-              Clinica Veterinaria Tucuman</a
-            >
-            <button
+          </a>
+          </div>
+          <div>
+              <button
               class="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
@@ -55,6 +57,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
+         </div>
           <div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -62,12 +65,12 @@
                   <a
                     class="nav-link active"
                     aria-current="page"
-                    href="/index.html"
+                    href="/proyecto2/index.html"
                     ><i class="fa-solid fa-house"></i> Home</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/pages/contact.html"
+                  <a class="nav-link" href="/proyecto2/Pages/contacto.html"
                     ><i class="fa-solid fa-link"></i> Contacto</a
                   >
                 </li>
@@ -91,97 +94,39 @@
 <br>
     </header>
     <main>
-        <!-- Carrousell -->
-        <div class="container-fluid">
-          <article class="row">
-            <div class="col-xl-8 col-md-12 col-sm-12">
-          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="/Assets/Images/ImagenCarrousell-1.webp" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/Assets/Images/ImagenCarrousell-2.webp" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/Assets/Images/ImagenCarrousell-3.webp" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-        </article>
-      </div>
-
-        <br>
+        <!-- Carrousell -->  
+        <section class="container-fluid">
+          <div id="containerCarrousell"></div>
+        </section>
+        <br><br>
+        <hr>
         <!-- Publicidad -->
+        <br>
         <section class="container-fluid">
           <div id="containerPublicidad"></div>
         </section>
         <br>
-        <!--Cards ---------- -->
-        <section class="container">
-          <div class="text-center">
-            <h2>Nuestros Especialistas</h2>
+        <hr>
+        <!--Cards -------- --> 
+        <br>
+        <div class="row my-3">
+          <div class="col">
+            <h2 class="text-center">Nuestros Profesionales</h2>
           </div>
-          <article class="row">
-            <div class="col-sm-12 col-md-4">
-              <div class="card shadow mt-4 text-center w-100">
-                <div class="card">
-                  <img src="/Assets/Images/Medico1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Dra. Ines Fernandez</h5>
-                    <p class="card-text">Imagenes</p>
-                    <a href="#" class="btn btn-primary">Ver turnos disponibles</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <div class="col-sm-12 col-md-4">
-              <div class="card shadow mt-4 text-center">
-                <div class="card">
-                  <img src="/Assets/Images/Medico 2.jpeg" class="card-img-top" width=100 alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Dra. Daniela Galvez</h5>
-                    <p class="card-text">Cardiologia</p>
-                    <a href="#" class="btn btn-primary">Ver turnos disponibles</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="container" id="contenedor"></div>       
+      </main>
 
-            <div class="col-sm-12 col-md-4 text-center">
-              <div class="card shadow mt-4">
-                <div class="card">
-                  <img src="/Assets/Images/Medico 3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Dr/a. Carlos Alberto Garcia</h5>
-                    <p class="card-text">Cirugia</p>
-                    <a href="#" class="btn btn-primary">Ver turnos disponibles</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-        <hr />
-      </div>
-    </main>
+    <footer>
 
-    <footer></footer>
-
+    </footer>
+  
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="/app.js"></script>
+    <script type="module" src="/proyecto2/app.js"></script>
+  <!--  <script src="https://use.fontawesome.com/c2813ccf5b.js"></script> -->
   </body>
 </html>

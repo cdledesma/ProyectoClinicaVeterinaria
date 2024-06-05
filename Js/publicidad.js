@@ -14,7 +14,7 @@ function Publicidad() {
       </p>
     </div>
     <div class="d-flex justify-content-center">
-      <button type="button" class="buttonPublicidad">
+      <button class="btn btn-outline-primary m-2" class="buttonPublicidad">
         Registrarse
       </button>
     </div>
