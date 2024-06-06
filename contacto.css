@@ -1,0 +1,98 @@
+body {
+    background-image: url(/Assets/Fondo\ Pantalla2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.contenedorcontacto {
+    background-color: rgba(182, 194, 221, .5);
+}
+
+.buttonenviarreclamo {
+     background-color: rgba(77, 126, 128, .5) ;
+    cursor: pointer;
+}
+
+.buttonenviarreclamo:hover {
+    background-color: white; border: 2px solid rgba(77, 126, 128, .5);
+    background: rgba(77, 126, 128, .5); color: white;
+}
+
+
+.contenedorbotonescard {
+    height: 100px;
+}
+
+.maincontacto {
+    background-color: rgba(182, 194, 221, .5);
+} 
+
+.parrafotextocontacto {
+    background-color: rgba(228, 232, 241, .5);
+}
+
+.titulocontacto {
+    background-color: rgba(77, 126, 128, .5) ;
+}
+
+.buttonconocenos {
+    height: 70px;
+    border-color: rgb(77, 126, 128);
+    cursor: pointer;
+}
+
+.buttonconocenos:hover {
+    background-color: white; border: 2px solid #265c4e;
+    background-color: rgba(77, 126, 128, .5) ;
+}
+
+.buttoncontactanos {
+    height: 70px;
+    padding: 10px 20px;
+    background-color: rgba(77, 126, 128, .5) ;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttoncontactanos:hover {
+    background-color: rgba(77, 126, 128, .5) ;
+    color: white;
+}
+
+.buttoncontactanos:active {
+    background-color: rgba(77, 126, 128, .5) ;
+}
+
+@media (max-width : 480px) {
+    .imagenlogocontacto {
+        width: 240px !important;
+        height: 230px !important;
+    }
+    .titulocontacto {
+        font-size: 20px !important;
+        width: 400px !important;
+    }
+    .parrafotextocontacto {
+        font-size: 12px !important;
+        width: 400px !important;
+    }
+
+    .buttonconocenos {
+        height: 50px;  
+        width: 170px !important; 
+        margin-left: 0px !important;
+    }
+
+    .buttoncontactanos {
+        height: 50px;  
+        width: 170px !important;  
+        margin-top: 20px; 
+        margin-right: 0px !important;
+    }
+    
+}
