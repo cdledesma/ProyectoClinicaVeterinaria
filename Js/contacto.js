@@ -26,6 +26,7 @@ const myModal1 = new bootstrap.Modal(document.getElementById("modalproducto"));
 
 const llamarmodalcontacto = (event) => {
     event.preventDefault ()
+    imprimirformcontacto ()
     myModal1.show ()
 }
 
@@ -72,11 +73,8 @@ const imprimircarddecontacto = () => {
 
         <article>        
             <div class="row text-center contenedorbotonescard p-3 my-5">
-                <div class="col-xl-6 col-md-6">
-                    <button type="button" class="buttonconocenos btn fw-bold fs-4 w-75 rounded-5 ms-5" >¡Conocenos!</button>
-                </div>
-                <div class="col-xl-6 col-md-6">
-                    <button type="button" class="buttoncontactanos btn fw-semibold fs-4 w-75 rounded-5 me-5"onclick = "llamarmodalcontacto (event)">¡Contactanos!</button>
+                <div class="col-xl-12 col-md-12">
+                    <button type="button" class="buttoncontactanos btn fw-semibold fs-4 w-75 rounded-5"onclick = "llamarmodalcontacto (event)">¡Contactanos!</button>
                 </div>
             </div>
         </article>
@@ -117,6 +115,31 @@ const agregarreclamos = (event) => {
     }
 } 
 
+//Imprimir formulario
 
-
+const imprimirformcontacto = () => {
+    contenedorcontacto.innerHTML = ""
+    let contenedorformulariocontacto = document.createElement ("div")
+    let formulariocontacto = `
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label my-3 fw-semibold fs-5">Nombre y apellido</label>
+                    <input type="nombre" class="form-control rounded-5 bg-body-secondary border border-secondary border-2" id="contactonombre" placeholder="Ingrese su nombre">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label my-3 fw-semibold fs-5">Email</label>
+                    <input type="email" class="form-control rounded-5 bg-body-secondary border border-secondary border-2" id="contactoemail" placeholder="Ingrese su Email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label my-3 fw-semibold fs-5">Envienos un mensaje</label>
+                    <textarea class="form-control rounded-5 bg-body-secondary border border-secondary border-2" id="contactomensaje" rows="3"></textarea>
+                    
+                  </div>
+                  <div class="text-center">
+                    <button type="button" class="buttonenviarreclamo btn fw-semibold w-50 rounded-5 mt-5" onclick="agregarreclamos (event)">Enviar</button>
+                  </div>
+    `
+    contenedorformulariocontacto.innerHTML = formulariocontacto
+    contenedorcontacto.append (contenedorformulariocontacto)
+}
+ 
 
