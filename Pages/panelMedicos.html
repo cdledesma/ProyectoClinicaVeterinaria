@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="ProyectoClinicaVeterinaria" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/82f0997eec.js"
+      crossorigin="anonymous"
+    ></script>
+<link rel="stylesheet" href="/styles.css">    <title>ProyectoClinicaVeterinaria</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/medicos.css">
+  </head>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <!-- Button trigger modal -->
+<a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn-iniciar">
+</a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        
+      <form action="" id="form-login">
+        <div class="row g-3 align-items-center">
+            <div class="row">
+                <label for="email" class="col-form-label col-3">Email</label>
+                <input type="email" id="email" class="form-control w-50" placeholder="name@example.com">
+            </div>          
+            <div class="row">
+                <label for="inputPassword" class="col-form-label col-3">Password</label>
+                <input type="password" id="inputPassword" class="form-control w-50" aria-describedby="passwordHelpInline">
+            </div>       
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-cancelar">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="btn-login">Iniciar sesión</button>
+        </div>
+    </form>
+    
+  </div>
+</div>
+</div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle disabled btn btn-primary" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Opciones
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" id="enlace-panel">Ir al Panel de control</a></li>
+              <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Cerrar Secion</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav></header>
+<main class="container-fluid d-flex m-2">
+  <section class="col-lg-2 col-sm-3">
+    <div class="card informacion usuario w-100" >
+      <div class="contenedor-imagen-perfil">e=
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBhEIBxISFRUWGCIbGBYWDRsVGBIhHxgdHx4hKB0iIS4jHx4xGxodIzItJyk3Oi4xFx8zODMtNygtLysBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAMgAyAMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABwEFBgQDAv/EAEMQAAIBAgMEBgYFCgYDAAAAAAABAgMEBQYRBxIhMRZBUWGS0xMiVXGBsRSRocPRFRcyNkJDUmJysnSCk8Hw8Qiz0v/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwC4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8LivRtqEq9xKMIxWspSkoxil1tvgkB9wTDGtsFirv8n5Tt6t7V5epFqHw0TlL4JLvPIrrbBjD36NK1s4vlvKDenem5v7EBWgSbo7tf03/AMp2uvZurT/0GHdbYMHe/WpWt5Fc91QT07knB/YwK0CYYLtgsXd/k/NlvVsqvL14tw+OqUo/FNd5SLevRuaEa9vKM4yWsZRkpRkn1prg0B9wAAAAAAAAAAAAAAAAAAAAAAAePFL+2wzD5319JQpwTlKT5JL5+7rI/bW+NbYcSlcXcqlvhdOWkYJ6SrtP6nLtb1UeS1erNhtRuLnNWb7TIlhJqD0q3Ml+yuaT90OOnW5wKlh9lbYbZU7Kyio04RUYxXKKQHkwHAMLy9Zq1wejCnHr0XrSfa5PjJ97ZtQAAAA1WPYBheYbN2uMUYVI9Wq9aL7VJcYvvTJRc2+NbHsSjcWkqlxhdSWkoN6yoNv6lLsa0UuT0ejLYeXELK2xKyqWV7FSpzi4yi+UkwPzhd/bYnh8L6xkp05pSjJcmn8vd1HsJHsuuLnKub7vIl/JuC1q20n+0ubS98OOnU4TK4AAAAAAAAAAAAAAAAAAAAMHzrNqjKS7H8gJPsjX5azrjOZavFur6OD7I7zenhhTRXCUf+OsU8pXNR83cy1/04fiVcAAAAAAAACR7XF+Rc64NmWlwaq+jm+2O8np4Z1EVxEo/wDIqKWUraouauY6f6c/wKnRbdGMn2L5AfQAAAAAAAAAAAAAAAAAADDSa0ZkASbYG/otHE8Hnzo3PFe9OH3ZWSRYTLovtzubOpwp39Pfh1Jyfrf3xqL4oroAAAAAAAAEm2+P6VRwzB4c61zwXuSh94VhJJaIkeLS6Ubc7azp8adhT359aUl6398qa+DK6AAAAAAAAAAAAAAAAAAAAAATPbZglzVwqjmTCtVXsp7+qXHc1Tb/AMrSfu3js8qY9b5lwCji1rwU48Y68YSXCUfg9fsNpVpwr03TqpOLWjTWqafBrQjNtVr7Is4Stbjelhl1LWMtHL0EvxjyfbHR81oBawfGhWpXNCNahJSjJJqSlqpJ8U01zR9gAAAGmzXj1vlrAK2LXXFQjwjrxnJ8Ix+L0+02detStqEq1eSjGKbcnLRRS4ttvkiNXNWvtdzhG1t96OGWstZS0cfTy/GXJdkdXzegG/2J4Jc0sKrZkxXV172e/q1x3NW0/wDM237t0ph8qVOFCmqdJJRS0SS0SS4JaH1AAAAAAAAAAAAAAAAAAAAAABrcdwawx/C54dikFOnLmuTT6mn1NdTNkAIrCOa9k1VxhGV7hrev81unz/o/tf8AK2d3l7aPlbH6adtcwpzf7utJUpru4vR/Bs65pNaM47HdmeU8bqOrcW0YTfOdKTpP3tR9Vv3oDqvpdtub/pIadvpFp9epzGYdo+VcApt3FzCpNfu6MlVm+7g9F8Wjm/zFZW39fS3mnZ6an/8AB0OBbM8p4JUVW3tozmuU6snVfvSl6qfuQHDzjmvazVUZxlZYanr/ADXCXL+v+1fzNFYwLBrDAMLhh2FwUKceS5tvrbfW31s2KSS0RkAAAAAAAAAAAAAAAAAAAAPLiF7bYbZzvL6cYU4LWUpPRRRJLvMuaNpV5PDsmqVtZxelS6lrGU+1Jriv6Y8e1pPQDtc17Rst5XbpXtbfqr91S0nNdz46R+LRyUc77QMz/qrhqo03yq1+tdqct2P1KR0+UdmeX8sxVaNNVq3XWqxUnr2qPKPw497O2AkvQ7aZib3sVxhUteqgpLTwqC+0z+afH5etVx68191TzisgCNUMxZ12cz+jZppTvbRPSNzCTlKC75P5T07paHaYLtNyji9NOldwpy/hrP0LXdrLg/g2dfKKktJf9nKYxs5yji83Uu7OmpP9qnrSbfa9xpP4gbrpBgu7vfSrbTt+lQ0+Zoca2m5Rwim3Vu4VJfw0H6Zvu1jwXxaNR+ZXJ29vblf3fSXp8tTd4Ps5yjhE1UtLOm5L9qprVafat9tL4AcPXzHnXaNP6NlalOytG9JXM5OMprukvlDXvloex7Jsfh61LHrzXvVTzirxiorSP/R+gJL0N2mYY9/CsYVXTqr7z18SmvtPxLO+0DLH61Yaq1Nc6tDqXa3Hej9aiV0AcflTaNlvNDVKyrblV/uqukJvuXHSXwbOwOJzdszy/maLrSpqjW6q1KKi9e1x5S+PHvRyFpmXNGzW8hh2clK5s5PSndR1lKHYm3xf9MuPY2loBZQeXD722xKzheWM4zpzWsZReqkj1AAAAAAAAAD51KkKNN1KjSSWrbeiWnN6n0Jjtqxq6Vlb5VwnjXvZbrSfFQ1SafYpN6e5SA0dWpebXszu2oynTwy2lxa4O4l+L6v4Y8ebK7h1haYXZQs7CEadOC0jGK0S/wCdvNniypgNplnAqWFWSWkFxlpo5yf6Un3t/wCy6jdAAAAAAAAAAAAAAAAADx4lYWmJ2U7O/hGdOa0lGS1T/wCdvUewARWlUvNkOZ1bVpTqYZcy4N8Xby/Fdf8AFHjzRZqdSFamqlNpprVNPVPXk9TU5rwG0zNgVXCr1LSa4S01cJL9GS70/wDddZxexXGrp2VxlXFuFeylupN8XDVpJdqi1p7nECnAAAAAAAAEjwePSDbvd3dXjCypbkNeOktFH5yqMrhJtkvr7QMwzlz9P97V/ACsgAAAAAAAAAAAAAAAAAAAABI8Yj0f272l3S4QvaW5PThrLRx+cabK4Sba16m0DL048/T/AHtL8QKyAAAAAAAASbZF+vuYf8R99WKyRG3w3aBlXN2J3uAWNKtC6rOSlOpFpx35Si1pUi1+nx1AtwJN0l2u+yrXxLzx0l2u+yrXxLzwKyCTdJdrvsq18S88dJdrvsq18S88Csgk3SXa77KtfEvPHSXa77KtfEvPArIJN0l2u+yrXxLzx0l2u+yrXxLzwKyCTdJdrvsq18S88dJdrvsq18S88Csgk3SXa77KtfEvPHSXa77KtfEvPArIJN0l2u+yrXxLzx0l2u+yrXxLzwKyCTdJdrvsq18S88dJdrvsq18S88Cskm2u/r7l7/EffUR0l2u+yrXxLzzVXGG7QM1Zuwy9x+xpUYWtZScoVIpKO/GUm9akm/0OGgFuAAAAAAAAAAGNENEZAGNENEZAGNENEZAGNENEZAGNENEZAGNENEZAGNENEZAGNENEZAGNEZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/9k=" 
+      class="card-img-top img-perfil" alt="..." />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Nombre de medico</h5>
+        <p class="card-text">
+          Especialidad
+        </p>
+      </div>
+    </div>
+  </section>
+  <aside class="col-lg-8 col-sm-6 m-2">
+    <p class="d-inline-flex gap-1">
+      <div class="btn btn-primary w-100" data-bs-toggle="collapse" href="#turnos-aprobar" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Ver turnos a aprobar
+      </div>
+    </p>
+    <div class="collapse" id="turnos-aprobar">
+      <div class="card card-body" id="turnosAprobar"></div>
+    </div>
+
+
+
+    <div id="panel">
+      <div id=""></div>
+      <div id="registrosAprobar"></div>
+      <div id="consulta"></div>
+    </div>
+  </aside>
+  <section class="col-lg-2 col-sm-3 ejemplo">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+<h4>12/05/2024</h4>          
+</div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+</main>
+    <!-- <main>
+        <h1>Bienvenido, Juan Pérez</h1>
+    
+        <h2>Agregar Nueva Mascota</h2>
+        <form id="form-nueva-mascota">
+            <input type="text" id="nombre-mascota" placeholder="Nombre de la Mascota" required>
+            <input type="text" id="especie-mascota" placeholder="Especie" required>
+            <input type="text" id="sexo-mascota" placeholder="Sexo" required>
+            <input type="text" id="raza-mascota" placeholder="Raza" required>
+            <input type="number" id="peso-mascota" placeholder="Peso (kg)" required>
+            <input type="url" id="imagen-mascota" placeholder="URL de la Imagen" required>
+            <button type="submit">Agregar Mascota</button>
+        </form>
+    
+        <h2>Solicitar Turno</h2>
+        <form id="form-solicitar-turno">
+            <select id="mascota-turno" required></select>
+            <input type="date" id="fecha-turno" required>
+            <input type="text" id="motivo-turno" placeholder="Motivo de la Consulta" required>
+            <select id="especialista-turno" required>
+                <option value="Cirugía">Cirugía</option>
+                <option value="Oftalmología">Oftalmología</option>
+                <option value="Cardiología">Cardiología</option>
+            </select>
+            <input type="time" id="horario-turno" required>
+            <button type="submit">Solicitar Turno</button>
+        </form>
+    </main> -->
+    <footer></footer>
+    <script src="/js/global.js"></script>
+    <script src="/js/panelMedicos.js"></script>
+    <!-- <script src="/js/cargarlocal.js"></script> -->
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

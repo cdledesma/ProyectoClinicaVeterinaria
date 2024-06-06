@@ -74,3 +74,127 @@ hr{
 br{
     background-color: #F7E78F;
 }
+
+
+
+
+
+
+
+body {
+    background-color: #DFE7FC;
+}
+
+.buttoncancelar{
+    border-color: #061437;
+    cursor: pointer;
+}
+.buttoncancelar:hover {
+    background-color: white; border: 2px solid #061437;
+    background: #061437; color: white;
+}
+
+.buttonguardarformulario1{
+    border-color: #061437;
+    cursor: pointer;
+}
+.buttonguardarformulario1:hover {
+    background-color: white; border: 2px solid #061437;
+    background: #061437; color: white;
+}
+
+.buttonenviarguardar {
+    padding: 10px 20px;
+    background-color:#061437;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonenviarguardar:hover {
+    background-color:#061437;
+    color: white;
+}
+
+.buttonenviarguardar:active {
+    background-color: #061437;
+  }
+
+.contenedorformulario {
+    background-color: #F3F4F6;
+}
+
+.contenedortexto {
+    margin-top: 150px;
+    text-align: center;
+}
+
+
+.contenedorformulario {
+    height: 1000px;
+}
+
+.contenedortitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width : 1024px) {
+
+
+    .titulocardinfo {
+        font-size: 15px !important;
+    }
+    
+    .parrafocard  {
+        font-size: 17px !important; 
+    }  
+
+}
+
+@media (max-width :480px) {
+    .contenedorformulario {
+       height: 1150px;
+    }
+
+    .titulocardinfo {
+        font-size: 13px !important;
+    }
+    
+    .parrafocard  {
+        font-size: 15px !important; 
+    } 
+
+    .padredelcontenedordelacard {
+        padding: 20px !important;
+    }
+
+    .contenedordelacard {
+        margin-top: 3px !important;
+        margin-bottom: 3px !important;
+    }
+
+    .buttonguardarformulario1{
+        border-color: #061437;
+        cursor: pointer;
+        margin-top: 30px;
+    }
+    .buttonguardarformulario1:hover {
+        background-color: white; border: 2px solid #061437;
+        background: #061437; color: white;
+    }
+    
+    .tituloform {
+        font-size: 21px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+
+    .buttonenviarguardar {
+       margin-top: 20px;
+       margin-bottom: 20px;
+    }
+}
