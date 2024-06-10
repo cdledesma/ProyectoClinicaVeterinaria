@@ -211,11 +211,13 @@ const actualizarNav = () => {
         btnIniciar.innerText = `Bienvenid@  ${usuarioConectado.nombre}`;
         btnReg.classList = "d-none";
         dropdown.classList.remove("d-none");
+        btnIniciar.removeAttribute("data-bs-toggle");
+        btnIniciar.classList.remove("btn")
         if (usuarioConectado && usuarioConectado.especialidad) {
             enlacePanel.href = "/pages/panelMedicos.html";
         } else if (usuarioConectado && !usuarioConectado.especialidad) {
-            enlacePanel.href = "/pages/panelUsuarios.html";                                                      
-            // Poner enlace de panel propietario
+            enlacePanel.href = "/pages/panelUsuarios.html";
+
         }
     } else {
         btnIniciar.innerText = "Iniciar Sesión";
@@ -224,10 +226,16 @@ const actualizarNav = () => {
 let btnCerrar = document.getElementById("btn-cerrar")
 
 const cerrarSe = ()=>{
-    confirm(`${usuarioConectado.nombre}, estas seguro que quieres cerrar sesión?`)
-    localStorage.removeItem("user");
+    let conf = confirm(`${usuarioConectado.nombre}, estas seguro que quieres cerrar sesión?`)
+    if (conf){
+        alert(`Secion cerrada con exito!`)
+        localStorage.removeItem("user");
     location.replace("../index.html");
     actualizarNav();
+    }
+    else{
+        alert(`Cierre de secion Cancelada`)
+    }
 
 
 }

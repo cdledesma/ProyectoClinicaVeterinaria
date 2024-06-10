@@ -1,28 +1,22 @@
-class turno {
-    constructor(dueño, dni, email, telefono, mascota, raza, tipo, servicio, fecha, id) {
-        this.dueño=dueño
-        this.dni=dni
-        this.email=email
-        this.telefono=telefono
-        this.mascota=mascota
-        this.raza=raza
-        this.tipo=tipo
-        this.servicio=servicio
-        this.fecha=fecha  
-        this.id=id
-    }
-}
-
-
-
-
-
-
+// class turno {
+//     constructor(dueño, dni, email, telefono, mascota, raza, tipo, servicio, fecha, id) {
+//         this.dueño=dueño
+//         this.dni=dni
+//         this.email=email
+//         this.telefono=telefono
+//         this.mascota=mascota
+//         this.raza=raza
+//         this.tipo=tipo
+//         this.servicio=servicio
+//         this.fecha=fecha  
+//         this.id=id
+//     }
+// }
 
 
 let servicios = ["Cirugia", "Esterilizacion", "Vacunacion", "Desparacitacion", "Consulta", "Ecografia"]
 let fechas = ["26/6/24", "27/6/24","30/6/24","1/7/24","4/7/24"]
-let turnos = JSON.parse (localStorage.getItem("turnos")) || []
+// let turnos = JSON.parse (localStorage.getItem("turnos")) || []
 
 //Capturar contenedor
 
@@ -34,11 +28,11 @@ const myModal1 = new bootstrap.Modal (document.getElementById("registroturnosmod
 const myModal2 = new bootstrap.Modal (document.getElementById("registroturnosmodal2"));
 const myModal3 = new bootstrap.Modal (document.getElementById("registroturnosmodal3"));
 //Llamar modal
-const llamarmodalT = () => {
+// const solicTur = (e) => {
 //   e.preventDefault ()
-  cargarformulario ()
-  myModal1.show ()
-}
+//   cargarformulario ()
+//   myModal1.show ()
+// }
 
 const llamarmodalalcancelar = () => {
   cargarformulario ()

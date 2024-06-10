@@ -1,4 +1,25 @@
 let selectorPaciente = document.getElementById("seleccionar-mascota");
+let secDatos = document.getElementById("cont-dat");
+
+const cargaDatos = ()=>{
+    secDatos.innerHTML = ""
+    let cont = document.createElement("div")
+    cont.classList = "card informacion usuario w-100"
+    let conte = `<div class="contenedor-imagen-perfil">
+         <img
+           src="${usuarioConectado.imagen}"
+           class="card-img-top img-perfil" alt="foto de perfil de ${usuarioConectado.nombre}" />
+       </div>
+       <div class="card-body">
+         <h5 class="card-title">${usuarioConectado.apellido} ${usuarioConectado.nombre}</h5>
+         <p class="card-text">
+           ver que poner aqui
+         </p>
+       </div>`
+    cont.innerHTML = conte;
+    secDatos.append(cont)
+    
+}
 
 const registroMascota = (e) => {
     e.preventDefault()
@@ -33,22 +54,22 @@ const registroMascota = (e) => {
 let formMascota = document.getElementById("formulario-mascota").addEventListener("submit", registroMascota);
 
 
-const desplegarPaciente = () => {
-    if (usuarioConectado && usuarioConectado.mascotas) {
-        selectorPaciente.innerHTML = "";
-        usuarioConectado.mascotas.map((item, i) => {
-            let opcion = document.createElement("option");
-            opcion.value = i + 1;
-            opcion.textContent = item.nombre;
-            selectorPaciente.appendChild(opcion);
-        });
-    }
-};
+// const desplegarPaciente = () => {
+//     if (usuarioConectado && usuarioConectado.mascotas) {
+//         selectorPaciente.innerHTML = "";
+//         usuarioConectado.mascotas.map((item, i) => {
+//             let opcion = document.createElement("option");
+//             opcion.value = i + 1;
+//             opcion.textContent = item.nombre;
+//             selectorPaciente.appendChild(opcion);
+//         });
+//     }
+// };
 
 
 
 
-desplegarPaciente();
+// desplegarPaciente();
 
 let btnTurno = document.getElementById("confirmar-turno");
 
@@ -78,11 +99,11 @@ const guardarTurno = (event) => {
 }
 
 
-document.getElementById("formulario-turno").addEventListener("submit", guardarTurno)
+// document.getElementById("formulario-turno").addEventListener("submit", guardarTurno)
 
 
 // cargarformturno();
-
+cargaDatos();
 
 
 
