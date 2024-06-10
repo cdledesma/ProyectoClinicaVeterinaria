@@ -235,5 +235,6 @@ const cerrarSe = ()=>{
 
 
 
+
 actualizarNav();
 

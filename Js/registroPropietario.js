@@ -1,37 +1,13 @@
-
-
-
-
-//Capturar contenedor
-
 let contenedorformulario = document.getElementById("cformm")
-
-
-
-
-
-
-
 // Funcion modal
-
 const myModal11 = new bootstrap.Modal(document.getElementById("registroturnosmodal11"));
-
-
-
 //Llamar modal
-
 const llamarmodal11 = (event) => {
   event.preventDefault()
   cargarformularioR()
   myModal11.show()
 }
-
-
-
-
-
 //Funcion cargar formulario
-
 const cargarformularioR = () => {
   contenedorformulario.innerHTML = ""
   let formulariotarjetaR = document.createElement("form");
@@ -85,12 +61,8 @@ const cargarformularioR = () => {
   formulariotarjetaR.innerHTML = cardformularioregistroR
   contenedorformulario.append(formulariotarjetaR);
 }
-
-
 //Agregar turno
-
 const registroPropietario = (event) => {
-
   // Detener submit
   event.preventDefault();
 
