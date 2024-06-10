@@ -4,7 +4,7 @@
 
 //Capturar contenedor
 
-let contenedorformulario = document.getElementById("cform")
+let contenedorformulario = document.getElementById("cformm")
 
 
 
@@ -14,16 +14,16 @@ let contenedorformulario = document.getElementById("cform")
 
 // Funcion modal
 
-const myModal1 = new bootstrap.Modal(document.getElementById("registroturnosmodal1"));
+const myModal11 = new bootstrap.Modal(document.getElementById("registroturnosmodal11"));
 
 
 
 //Llamar modal
 
-const llamarmodal1 = (event) => {
+const llamarmodal11 = (event) => {
   event.preventDefault()
-  cargarformulario()
-  myModal1.show()
+  cargarformularioR()
+  myModal11.show()
 }
 
 
@@ -32,11 +32,11 @@ const llamarmodal1 = (event) => {
 
 //Funcion cargar formulario
 
-const cargarformulario = () => {
+const cargarformularioR = () => {
   contenedorformulario.innerHTML = ""
-  let formulariotarjeta = document.createElement("form");
-  formulariotarjeta.classList = "row h-100 w-100";
-  let cardformularioregistro = ` 
+  let formulariotarjetaR = document.createElement("form");
+  formulariotarjetaR.classList = "row h-100 w-100";
+  let cardformularioregistroR = ` 
     <div class="col">
               <div class="col-xl-12 col-md-12 text-center text-primary-emphasis mb-5"><h3 class="tituloform">Datos del propietario</h3></div>
               <div class="my-3">
@@ -82,8 +82,8 @@ const cargarformulario = () => {
                 <button type="button" class="buttonguardarformulario1 btn fw-semibold w-50 rounded-5" onclick="registroPropietario(event)">Registrarse</button>
               </div>
      `
-  formulariotarjeta.innerHTML = cardformularioregistro
-  contenedorformulario.append(formulariotarjeta);
+  formulariotarjetaR.innerHTML = cardformularioregistroR
+  contenedorformulario.append(formulariotarjetaR);
 }
 
 
@@ -144,7 +144,7 @@ const registroPropietario = (event) => {
           };
 
 
-          myModal1.hide()
+          myModal11.hide()
         } else {
           Swal.fire({
             text: "Las contraseñas no coinciden",

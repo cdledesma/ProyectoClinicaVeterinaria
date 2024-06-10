@@ -152,7 +152,6 @@ veterinarios.push(new Veterinario('76543210', 'Elizalde', 'Walter', 'walter.eliz
 
 
 
-
 let btnLogin = document.getElementById("btn-login")
 const login = (event) => {
     event.preventDefault();
@@ -226,11 +225,15 @@ let btnCerrar = document.getElementById("btn-cerrar")
 
 const cerrarSe = ()=>{
     confirm(`${usuarioConectado.nombre}, estas seguro que quieres cerrar sesión?`)
-    localStorage.setItem("user", JSON.stringify(email));
+    localStorage.removeItem("user");
     location.replace("../index.html");
     actualizarNav();
 
 
 }
 
+
+
+
 actualizarNav();
+
