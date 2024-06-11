@@ -27,12 +27,12 @@ let contenedorformulario3 = document.getElementById ("cform3")
 const myModal1 = new bootstrap.Modal (document.getElementById("registroturnosmodal1"));
 const myModal2 = new bootstrap.Modal (document.getElementById("registroturnosmodal2"));
 const myModal3 = new bootstrap.Modal (document.getElementById("registroturnosmodal3"));
-//Llamar modal
-// const solicTur = (e) => {
-//   e.preventDefault ()
-//   cargarformulario ()
-//   myModal1.show ()
-// }
+// Llamar modal
+const solicTur = (event) => {
+  event.preventDefault ()
+  cargarformulario ()
+  myModal1.show ()
+}
 
 const llamarmodalalcancelar = () => {
   cargarformulario ()
