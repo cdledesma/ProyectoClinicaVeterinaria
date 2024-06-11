@@ -52,9 +52,6 @@ const llamarmodal3 = (event) => {
     myModal3.show ()
 }
 
-
-
-
 //Funcion cargar formulario
 
 const cargarformulario = () => {

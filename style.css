@@ -198,3 +198,7 @@ body {
        margin-bottom: 20px;
     }
 }
+#labelMc{
+    height: 100px;
+    resize: none;
+}
