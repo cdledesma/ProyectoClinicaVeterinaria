@@ -14,6 +14,7 @@ header{
      width: 50%;
      height: 50%;
 }
+
 #logo{
     width: 50%;
     height: 50%;
@@ -23,9 +24,18 @@ header{
     background-size: cover;
     background-position: center; 
 }
+.contenedor-carrusel{
+    height: 75vh!important;
+}
+/* img{
+    object-fit: cover!important;
+} */
 main {
-    background-color:#ECB543}
-
+    background-color:#ECB543;
+}
+.mainch{
+    height: 100vh;
+}
 #seccionPublicidad{
     padding: 10px;
     width: 100%;

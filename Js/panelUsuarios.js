@@ -206,13 +206,13 @@ const cargarformulario = () => {
 
     <select class="form-select border border-primary-subtle rounded-5" aria-label="Default select example" id="selectservicio">
                     <option selected value="">Elige un servicio</option>
-                    <option value="Cirugia">Cirugia</option>
-                    <option value="Clinica General">Clinica General</option>
-                    <option value="Traumatologia">Traumatologia</option>
-                    <option value="Oftalmologia">Oftalmologia</option>
-                    <option value="Radiologia">Radiologia</option>
-                    <option value="Ecografia">Ecografia</option>
-                    <option value="Cardiologia">Cardiologia</option>
+                    <option value="Cirugía">Cirugía</option>
+                    <option value="Clínica General">Clínica General</option>
+                    <option value="Traumatología">Traumatología</option>
+                    <option value="Oftalmología">Oftalmología</option>
+                    <option value="Radiología">Radiología</option>
+                    <option value="Ecografía">Ecografía</option>
+                    <option value="Cardiología">Cardiología</option>
 
                   </select>
   </div>
@@ -466,5 +466,66 @@ const cargarmensajedexito = () => {
 //         });
 //     }
 // };
+usuarioConectado
+let turnosPendientes = document.getElementById("masc-colaTurnos")
+const turnosPen = () => {
+    turnosPendientes.innerHTML = "";
+    let colaPendiente = false; 
 
+        usuarioConectado.turnos.map((turno) => {
+            if (!turno.solic) {
+                let tarjetaCola = document.createElement("div");
+                tarjetaCola.classList.add("card");
+
+                let contenido = `
+                    <div class="card-body d-flex justify-content-between align-items-center row">
+                        <a href="">${turno.paciente}</a>
+                    </div>`;
+                tarjetaCola.innerHTML = contenido;
+                turnosPendientes.appendChild(tarjetaCola);
+
+                colaPendiente = true;
+            }
+        });
+
+
+    if (!colaPendiente) {
+        let mensaje = document.createElement("div");
+        mensaje.classList.add("alert", "alert-info");
+        mensaje.innerText = "No hay turnos pendientes .";
+        turnosPendientes.appendChild(mensaje);
+    }
+};
+
+let listaAtendidos = document.getElementById("atendidos")
+
+// const atendidos = () => {
+//     listaAtendidos.innerHTML = "";
+//     let col = false; 
+
+//     propietarios.forEach((propietario) => {
+//         propietario.turnos.forEach((turno) => {
+//             if (turno.solic && turno.especialista === usuarioConectado.especialidad && turno.estado) {
+//                 let tarjetaCola = document.createElement("div");
+//                 tarjetaCola.classList.add("card");
+
+//                 let contenido = `
+//                     <div class="card-body d-flex justify-content-between align-items-center row">
+//                         <a href="">${turno.paciente}</a>
+//                     </div>`;
+//                 tarjetaCola.innerHTML = contenido;
+//                 listaAtendidos.appendChild(tarjetaCola);
+
+//                 col = true;
+//             }
+//         });
+//     });
+
+//     if (!col) {
+//         let mensaje = document.createElement("div");
+//         mensaje.classList.add("alert", "alert-info");
+//         mensaje.innerText = "No se atendio a ningun paciente .";
+//         listaAtendidos.appendChild(mensaje);
+//     }
+// };
 cargaDatos();

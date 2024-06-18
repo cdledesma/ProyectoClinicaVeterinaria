@@ -2,14 +2,14 @@ function Carrousell() {
     const containerCarrousell = document.getElementById("containerCarrousell");
   
     const section = document.createElement("section");
-    section.classList.add("container-fluid");
+    section.classList.add("container");
   
     section.innerHTML = ` 
         <div class="row">
             <div class="col-xl-12 col-md-12 col-sm-12">
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
+                <div id="carouselExampleAutoplaying" class="carousel slide " data-bs-ride="carousel">
+                    <div class="carousel-inner contenedor-carrusel">
+                        <div class="carousel-item active ">
                             <img src="/Assets/Images/pastor-aleman-siendo-examinado-veterinario - .jpg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">

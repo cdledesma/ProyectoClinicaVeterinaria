@@ -152,97 +152,98 @@ veterinarios.push(new Veterinario('76543210', 'Elizalde', 'Walter', 'walter.eliz
 
 
 
-let btnLogin = document.getElementById("btn-login")
-const login = (event) => {
-    event.preventDefault();
-    let email = document.getElementById("email").value;
-    let contraseña = document.getElementById("inputPassword").value;
-    //  Validaciones min, espapcio, etc
+// let btnLogin = document.getElementById("btn-login")
+// const login = (event) => {
+//     event.preventDefault();
+//     let email = document.getElementById("email").value;
+//     let contraseña = document.getElementById("inputPassword").value;
+//     //  Validaciones min, espapcio, etc
 
-    let propietarioValido = propietarios.find((item)=>{
-        return item.email === email && item.pass === contraseña
+//     let propietarioValido = propietarios.find((item)=>{
+//         return item.email === email && item.pass === contraseña
        
-    });
-    if (propietarioValido){
-        console.log("enviar a panel de prop");
-        localStorage.setItem("user", JSON.stringify(email));
-        alert(`Felicidades, iniciaste sesión correctamente!`);
-        location.replace("/pages/panelUsuarios.html");
-        actualizarNav();
-        return        
-    }
+//     });
+//     if (propietarioValido){
+//         console.log("enviar a panel de prop");
+//         localStorage.setItem("user", JSON.stringify(email));
+//         alert(`Felicidades, iniciaste sesión correctamente!`);
+//         location.replace("/pages/panelUsuarios.html");
+//         actualizarNav();
+//         return        
+//     }
 
-    let veterinarioValido = veterinarios.find((item)=>{
-        return item.email === email && item.pass === contraseña
+//     let veterinarioValido = veterinarios.find((item)=>{
+//         return item.email === email && item.pass === contraseña
        
-    });
-    if (veterinarioValido){
-        localStorage.setItem("user", JSON.stringify(email));  
-        alert(`Felicidades, iniciaste sesión correctamente!`);
+//     });
+//     if (veterinarioValido){
+//         localStorage.setItem("user", JSON.stringify(email));  
+//         alert(`Felicidades, iniciaste sesión correctamente!`);
 
-        location.replace("/pages/panelMedicos.html");
-        actualizarNav();
-        return
-  }
-  alert("Los Datos ingresados son Incorrectos")
+//         location.replace("/pages/panelMedicos.html");
+//         actualizarNav();
+//         return
+//   }
+//   alert("Los Datos ingresados son Incorrectos")
 
-}
+// }
 
-let formLogin = document.getElementById("form-login").addEventListener("submit", login)
+// let formLogin = document.getElementById("form-login").addEventListener("submit", login)
 let uss = JSON.parse(localStorage.getItem("user"))
-// let veterinarios = JSON.parse(localStorage.getItem("veterinarios")) || null
-// let propietarios = JSON.parse(localStorage.setItem("propietarios")) || null
+// // let veterinarios = JSON.parse(localStorage.getItem("veterinarios")) || null
+// // let propietarios = JSON.parse(localStorage.setItem("propietarios")) || null
 let usuarios = veterinarios.concat(propietarios)
 let usuarioConectado = usuarios.find((item)=>{
     return item.email ===uss   
 });
 
-console.log(usuarioConectado);
+// console.log(usuarioConectado);
 
-let btnReg = document.getElementById("registrarse")
-const actualizarNav = () => {
-    let dropdown = document.getElementById("dropdown");
-    let btnIniciar = document.getElementById("btn-iniciar");
-    let enlacePanel = document.getElementById("enlace-panel");
-    btnIniciar.innerText = "Iniciar Sesión";
+// let btnReg = document.getElementById("registrarse")
 
-
-    if (uss) {
-        btnIniciar.innerText = `Bienvenid@  ${usuarioConectado.nombre}`;
-        btnReg.classList = "d-none";
-        dropdown.classList.remove("d-none");
-        btnIniciar.removeAttribute("data-bs-toggle");
-        btnIniciar.classList.remove("btn")
-        if (usuarioConectado && usuarioConectado.especialidad) {
-            enlacePanel.href = "/pages/panelMedicos.html";
-        } else if (usuarioConectado && !usuarioConectado.especialidad) {
-            enlacePanel.href = "/pages/panelUsuarios.html";
-
-        }
-    } else {
-        btnIniciar.innerText = "Iniciar Sesión";
-    }
-}
-let btnCerrar = document.getElementById("btn-cerrar")
-
-const cerrarSe = ()=>{
-    let conf = confirm(`${usuarioConectado.nombre}, estas seguro que quieres cerrar sesión?`)
-    if (conf){
-        alert(`Secion cerrada con exito!`)
-        localStorage.removeItem("user");
-    location.replace("../index.html");
-    actualizarNav();
-    }
-    else{
-        alert(`Cierre de secion Cancelada`)
-    }
+// const actualizarNav = () => {
+//     let dropdown = document.getElementById("dropdown");
+//     let btnIniciar = document.getElementById("btn-iniciar");
+//     let enlacePanel = document.getElementById("enlace-panel");
+//     btnIniciar.innerText = "Iniciar Sesión";
 
 
-}
+//     if (uss) {
+//         btnIniciar.innerText = `Bienvenid@  ${usuarioConectado.nombre}`;
+//         btnReg.classList = "d-none";
+//         dropdown.classList.remove("d-none");
+//         btnIniciar.removeAttribute("data-bs-toggle");
+//         btnIniciar.classList.remove("btn")
+//         if (usuarioConectado && usuarioConectado.especialidad) {
+//             enlacePanel.href = "/pages/panelMedicos.html";
+//         } else if (usuarioConectado && !usuarioConectado.especialidad) {
+//             enlacePanel.href = "/pages/panelUsuarios.html";
+
+//         }
+//     } else {
+//         btnIniciar.innerText = "Iniciar Sesión";
+//     }
+// }
+// let btnCerrar = document.getElementById("btn-cerrar")
+
+// const cerrarSe = ()=>{
+//     let conf = confirm(`${usuarioConectado.nombre}, estas seguro que quieres cerrar sesión?`)
+//     if (conf){
+//         alert(`Secion cerrada con exito!`)
+//         localStorage.removeItem("user");
+//     location.replace("../index.html");
+//     actualizarNav();
+//     }
+//     else{
+//         alert(`Cierre de secion Cancelada`)
+//     }
+
+
+// }
 
 
 
 
 
-actualizarNav();
+// actualizarNav();
 

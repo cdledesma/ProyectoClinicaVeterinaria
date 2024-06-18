@@ -1,66 +1,72 @@
 let contenedorformulario = document.getElementById("cformm")
-// Funcion modal
-const myModal11 = new bootstrap.Modal(document.getElementById("registroturnosmodal11"));
-//Llamar modal
-const llamarmodal11 = (event) => {
-  event.preventDefault()
-  cargarformularioR()
-  myModal11.show()
-}
+// let myModal11 = new bootstrap.Modal(document.getElementById("registroturnosmodal11"));
+// const llamarmodal11 = ()=>{
+//   cargarformularioR();
+//   myModal11.show();
+// }
+
+
+// const llamarmodal11 = (event) => {
+//   event.preventDefault()
+//   cargarformularioR()
+//   myModal11.show()
+// }
 //Funcion cargar formulario
-const cargarformularioR = () => {
-  contenedorformulario.innerHTML = ""
-  let formulariotarjetaR = document.createElement("form");
-  formulariotarjetaR.classList = "row h-100 w-100";
-  let cardformularioregistroR = ` 
-    <div class="col">
-              <div class="col-xl-12 col-md-12 text-center text-primary-emphasis mb-5"><h3 class="tituloform">Datos del propietario</h3></div>
-              <div class="my-3">
-                <label for="exampleFormControlInput1" class="form-label ">Nombre </label>
-                <input type="text" class="form-control border border-primary-subtle rounded-5" id="labelnombredueño" placeholder="Ingrese su nombre">
-              </div>
-              <div class="my-3">
-              <label for="exampleFormControlInput1" class="form-label ">Apellido</label>
-              <input type="text" class="form-control border border-primary-subtle rounded-5" id="labelapellidodueño" placeholder="Ingrese su Apellido">
-            </div>
-            <div class="my-3">
-            <label for="exampleFormControlInput1" class="form-label ">Domicilio </label>
-            <input type="text" class="form-control border border-primary-subtle rounded-5" id="labeldomiciliodueño" placeholder="Ingrese su direccion">
-          </div>
-              <div class="my-3">
-                <label for="exampleFormControlInput1" class="form-label">Dni</label>
-                <input type="text" class="form-control border border-primary-subtle rounded-5" id="labeldni" placeholder="Ingrese su dni">
-              </div>
-              <div class="my-3">
-              <label for="exampleFormControlInput1" class="form-label">Telefono</label>
-              <input type="text" class="form-control border border-primary-subtle rounded-5" id="labeltelefono" placeholder="Ingrese su telefono">
-              </div>
-              <div class="my-3">
-                <label for="exampleFormControlInput1" class="form-label">Email</label>
-                <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelemail" placeholder="Ingrese su email">
-              </div>
-              <div class="my-3">
-                <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-                <input type="password" class="form-control border border-primary-subtle rounded-5" id="labelcontraseña" placeholder="Ingrese su email">
-              </div>
-              <div class="my-3">
-                <label for="exampleFormControlInput1" class="form-label">Repetir contraseña</label>
-                <input type="password" class="form-control border border-primary-subtle rounded-5" id="labelrepcontraseña" placeholder="Ingrese su email">
-              </div>
-              <div class="my-3">
-                <label for="exampleFormControlInput1" class="form-label">Foto de Perfil</label>
-                <input type="text" class="form-control border border-primary-subtle rounded-5" id="labelfoto" placeholder="ingrese url de foto">
-              </div>
-            </div>
+
+
+// const cargarformularioR = () => {
+//   contenedorformulario.innerHTML = ""
+//   let formulariotarjetaR = document.createElement("form");
+//   formulariotarjetaR.classList = "row h-100 w-100";
+//   let cardformularioregistroR = ` 
+//     <div class="col">
+//               <div class="col-xl-12 col-md-12 text-center text-primary-emphasis mb-5"><h3 class="tituloform">Datos del propietario</h3></div>
+//               <div class="my-3">
+//                 <label for="exampleFormControlInput1" class="form-label ">Nombre </label>
+//                 <input type="text" class="form-control border border-primary-subtle rounded-5" id="labelnombredueño" placeholder="Ingrese su nombre">
+//               </div>
+//               <div class="my-3">
+//               <label for="exampleFormControlInput1" class="form-label ">Apellido</label>
+//               <input type="text" class="form-control border border-primary-subtle rounded-5" id="labelapellidodueño" placeholder="Ingrese su Apellido">
+//             </div>
+//             <div class="my-3">
+//             <label for="exampleFormControlInput1" class="form-label ">Domicilio </label>
+//             <input type="text" class="form-control border border-primary-subtle rounded-5" id="labeldomiciliodueño" placeholder="Ingrese su direccion">
+//           </div>
+//               <div class="my-3">
+//                 <label for="exampleFormControlInput1" class="form-label">Dni</label>
+//                 <input type="text" class="form-control border border-primary-subtle rounded-5" id="labeldni" placeholder="Ingrese su dni">
+//               </div>
+//               <div class="my-3">
+//               <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+//               <input type="text" class="form-control border border-primary-subtle rounded-5" id="labeltelefono" placeholder="Ingrese su telefono">
+//               </div>
+//               <div class="my-3">
+//                 <label for="exampleFormControlInput1" class="form-label">Email</label>
+//                 <input type="email" class="form-control border border-primary-subtle rounded-5" id="labelemail" placeholder="Ingrese su email">
+//               </div>
+//               <div class="my-3">
+//                 <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+//                 <input type="password" class="form-control border border-primary-subtle rounded-5" id="labelcontraseña" placeholder="Ingrese su email">
+//               </div>
+//               <div class="my-3">
+//                 <label for="exampleFormControlInput1" class="form-label">Repetir contraseña</label>
+//                 <input type="password" class="form-control border border-primary-subtle rounded-5" id="labelrepcontraseña" placeholder="Ingrese su email">
+//               </div>
+//               <div class="my-3">
+//                 <label for="exampleFormControlInput1" class="form-label">Foto de Perfil</label>
+//                 <input type="text" class="form-control border border-primary-subtle rounded-5" id="labelfoto" placeholder="ingrese url de foto">
+//               </div>
+//             </div>
 
             
-              <div class="text-center">
-                <button type="button" class="buttonguardarformulario1 btn fw-semibold w-50 rounded-5" onclick="registroPropietario(event)">Registrarse</button>
-              </div>
-     `
-  formulariotarjetaR.innerHTML = cardformularioregistroR
-  contenedorformulario.append(formulariotarjetaR);
-}
+//               <div class="text-center">
+//                 <button type="button" class="buttonguardarformulario1 btn fw-semibold w-50 rounded-5" onclick="registroPropietario(event)">Registrarse</button>
+//               </div>
+//      `
+//   formulariotarjetaR.innerHTML = cardformularioregistroR
+//   contenedorformulario.append(formulariotarjetaR);
+// }
 //Agregar turno
 const registroPropietario = (event) => {
   // Detener submit
@@ -115,6 +121,7 @@ const registroPropietario = (event) => {
 
           };
 
+let myModal11 = new bootstrap.Modal(document.getElementById("cformm"));
 
           myModal11.hide()
         } else {
@@ -143,3 +150,4 @@ const registroPropietario = (event) => {
   }
 };
 
+// let btnReg = document.getElementById("registrarse").addEventListener("click", llamarmodal11);

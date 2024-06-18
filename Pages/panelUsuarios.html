@@ -17,112 +17,17 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="/style.css">
 </head>
-<header>|
+<header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Hospital Escuela de Veterinaria</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link   btn btn-primary" aria-current="page" href="/index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <!-- Button trigger modal -->
-<a type="button" class="nav-link btn btn-primary col-12 " data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn-iniciar">
-</a>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-        
-      <form action="" id="form-login">
-        <div class="row g-3 align-items-center">
-            <div class="row">
-                <label for="email" class="col-form-label col-3">Email</label>
-                <input type="email" id="email" class="form-control w-50" placeholder="name@example.com">
-            </div>          
-            <div class="row">
-                <label for="inputPassword" class="col-form-label col-3">Password</label>
-                <input type="password" id="inputPassword" class="form-control w-50" aria-describedby="passwordHelpInline">
-            </div>       
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-cancelar">Cancelar</button>
-            <button type="submit" class="btn btn-primary" id="btn-login">Iniciar sesión</button>
-        </div>
-    </form>
-    
-  </div>
-</div>
-</div>
-          </li>
-          <li>
-            <a href></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-none btn btn-primary" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Opciones
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" id="enlace-panel">Ir al Panel de control</a></li>
-              <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" id="btn-cerrar" onclick="cerrarSe()">Cerrar Sesión</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-primary " aria-disabled="true" id="registrarse" onclick="llamarmodal11 (event)">Registrarse</a>
-          </li>
-        </ul>
-        <div 
-        class="modal fade" 
-        id="registroturnosmodal11" 
-        tabindex="-1" 
-        aria-labelledby="exampleModalLabel" 
-        aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="contenedorformulario p-5 my-5 rounded-5 shadow-lg" id="cformm">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
   </nav>
 </header>
-<main class="container-fluid d-flex m-2">
-  <section class="col-lg-2 col-sm-3" id="cont-dat">
+<main class="container-fluid d-flex m-2 mainch">
+  <section class="col-lg-2 col-sm-3 container-fluid" id="cont-dat">
     <div class="card informacion usuario w-100">
-      <!-- <div class="contenedor-imagen-perfil">
-        <img
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAACUCAMAAAATdsOFAAAAZlBMVEX////6+vr39/cAAADT09Pd3d06Ojr09PTw8PDt7e3g4OBmZmbl5eUhISFERETDw8Ozs7NaWlqenp6BgYHMzMyJiYk1NTVUVFRycnIrKyukpKRra2uQkJBfX196enpPT08ODg4aGhoUKzgUAAAKCElEQVR4nO1di5KjKhAV0BCfoEYTja/8/09e8Z0EI+1qnFuVU7tbmR2ge9qmaegjo2ktEMbiL9JAqDuJvvUf5Y6bC8IC6vJHPUQXDNAcUyEIqnknCEkE1d9BiII1F0aoOwF+5lpILQivEIRnBAlD4BUDCt0xAjwtYR8KtnnTE8sFIfEM1wyoCRcAdKwbn7W1guQ/Ml5nCjjo9oK+o7gm/PVbkn744YcffvhBwDQujAuwi2EerQwAehrlMYmvvn/13CrOo4Cdj9ZJBTTwE2KnF8MxBSzjwu8V8W6XoxVbgmVXj5v+mqcgk8dVEvxh0yPdJlc+800n8kjwV93eiMiNffi+mXoxW7Wh2Rv85DH6uYmVVeFCkwOAQhIp+DJLTn8tYdfJSS2EmD75Uw6POQlVFaJX7w/pTjOSqrd2vOLP+Dsq3LmIKMXFDfZSBQo7+RQSJeAE9KPuh8IFr/Ep0ffQBIqUAG0ukBFje02gYKsePrI9Z3NVgLDiaFW/48MMvvkrg7R+9FTlZHUazom1pSZQoCqDNGdT/z779rbKwJA9IO5ieuX0S3ak2R0XsP7XulbP+YLnb6sOBBGBtDbzKIunebGxZkXYBo43NeJSVUS/J45WPWUvbrFK7gYJP3ennm6OcRo7juU4jjmUakyDZ4lfL/7BUyzl3hpvp/++O6e3aPz50VBFM9P79XSKT6eTV/p2A99LiM+E0taTj5jVitg+U7lEkE3vk6uibkTnXlV+ynRdvzDGgywsiiIMmNE9AFyEeBSEwhC8y0ZIWmpsSpDKVU1+HcM0asu4TkS8z1OPPaxWvij91jtVsMdgJLOvqEsipFoGRfmwHDX14rob87wlDzASfSLIgObLM9XT/r8Uy+B0dFRhiPph8SpcTAfNnGuDcHS2QQtDI0hSm25M0WqtpPsl7lNuTBsHTEm63A+Ft8ZGne9nPiTSNYLeLSs0x8P8UfD3zO8a1UPV46nu2gLS8itaETwBpL5U+OV7Vb11P61zGxXVvaIfkDIToctD7dkb9UZ2FKS76juOhgxAZdyM/oPqTK1aVcXsrKMkPaluHSKP9ushqhdk5ciO8BwdZbS6murnNlMXQ4W16mGsmkOeSdQJrKVQXzVrFk6uyRVriC2dLipG1x9O07puWxJuAdZFRppEphGk3e9qndoZKiWBdNOTisijFGC4i/qViFSZ76kqXgsSuuPORDfFjsLmc7yXztmxamIWJX2gMNzQBezzRDCqLj2PK3OV+iCEPhC82m/I6FVS1ObCuJnw3GMEcvJca1GcekFcJeUX6clHglf3DBWVsO3G0eunlF0NyGmpeLKM0E6QiuqYyhaiJzQBX1W+J+JEMzXCEhfAsywz7mc1U1C9NjeiCzQtCAHMC7RufSjKxcZvKPuYyMjy6idWosUZCPBYL+gToXCF6n4fE/VqeSX7NEPXoN6XdkEpWqH6Pe8+XCqF7doqCuY8xi11oBzTR+S91ZVU3xij6iyGSy/D7sNFwWG2hjccSxgJ/Lx56K0SYbbGqDqGH5me434He4Tq5XiuDj9uNh79g1JaTTdGPqZ8D9Bxr8Co8BGq38aQaIcf2kkRPPpPaunXthCZYy/+Do0S4XC0XqyIrP+KdFSdQY8OqT3M8fsBB9XMHUxtQEOMEQ9lU3vdYe8/QR+ChGaegCGGkb4v9WFnSJsAjYelOIpgp56B3T8xwInAhphsL3gMWk/N69BVT46oWsejl+oPUMl/MjeOyL606TEEvYMWpXQ83eYHZF+1AuVosFRhrzMATegwgXcEA2886RUxBkDOYe7oXllxBInNnNZjILVf7zZ8PN8P4SPRZBKS0UN5aWETGo+1UL7ZCeg2pZMoH8XQcnLKCAxNm4HnUydJH2oGzKYzmsXH0AR0d2oyHMYqmcwlmS6fgX0M5dF4JtrRe7y8MpqnYmJ0DFsPtsNr+Y2Wp0Xdy/KJEpMckHw1CPyXpfCaLPjM9fnBOI+jXiXgb8Tie/yRv36NnwNKej2K3Wu9kadp+MEF9NJ7CYX5Td7yC7i/icYpmZt5PMlfIyE5jtubSU4iLjO6h+RtP+Ksp+v9M3QZvZVJinnokkhWrCA+7gUCFEueOLp7/GX/oEckl+yjSsXCI0wnxXbSU5S0IvZUeT1ziayUbbps+1e6kak4pF5JPCa4GSHxojaaOGn+iFku839O1AUpgyrvuiRzEoscnAbx4+F69T8PW0daaku2oLcSIEgRgDstQvttg0Y7iobDs1sYtDHkUr0nt5bHAXdtKAHRuXsSJNDrpZw+X/3wnFC2MCUnRbxyYKqLAuRHzVBD9FEdjsZpd23GMOTdloyeuq+ugaICdtlFK+WTQ2ApR2l2vKDz4kELJC0UWN5rGHXqvR1E9V6n+XJ6w2jD6rNH71fEXo0bCSRjO/4rbZp7jianLM7p1X2as6sgLACuW8GaaWfdQ2y97EKixH6LmOyU248n3fEtwoC7eYQIhHpimqwbbZxJfcC6Zer1PJT6qzNP7pruv5z8oqyKKM6nCTGyHgxwr0zDTGs+tLq/N5hlV82NWI/hlJf2kqLakkHpZrXrn7OnVMu6EfGWqRlVORv6ZT7M0bVBdSSjl1KqTocZRqS231kljUnUbR0u5Do4DUt6wrV+JScuhq89kuSQc9JRdURlD0tYXIPdU3RmV+KL+KyZaZJMVlaak7QZiWbTBdcs3EdqCvoPKYmv/pp76+qdm0s0B0VFMZ6elm7IsRdqVuqVwVNuWO85BEvWsF/eLLQC78QdVPfhoeulby+Qz6mudSuOhFPXRHsJ/3EWlBeuF4iFk1VZ6fO3pFb3Ssbi/C3aWEF8LcSuFumB5xZcJRB3JkUym6OWXaXsLWbkkfxitvOelEy2PTYL8v7OskgznNTtOCXmJa9zTIW9dX/vl8RbBBNKnXSCM9JdCtCEiVm7sbedUW0dKq44G//nHCQkWzZZ5+XSGSojV8/AcuMhm3rOXxYhbtp6XYnq0OQuHz0iLM9fmivLFBVAnIQTSQh075dgiL4LskLCFweZESSPlnLwl+cLSrlngljtgctFyDluqfIMZf92eDInKNj/9Spjr2OfYO/3fs/JbjX9Itm3hBrtN/45Wfe+sCLYnh656+C0kO07twKyd3zdmu07lXZ8iROHt10r+vQGfyVPEeZjZ/IKB73vDBp51euhAFi7EXs8MCkQinAv/t3+lxbsRdjUH7uTnaydOAPBaZdhnwDh1QBg58tt/hXXPWo0mpZ8oVQYJMtt4MDQa4PWgCV7LEqGrG70/xCif+OqsfMulyQx8oUCLdolA/sOv3+XZY8Tx7CMneHspPrpC9hFdax/BX/yqsoffvjhhx9+kGB70tUW13Ep4by5HHT+zms6s9SC1c8C+utz1gqaq9chYCnxeUgQj2udoNlfcYQwWvfLquYIEx+at/wVqBw8pev8B22NYcWiSIJUAAAAAElFTkSuQmCC"
-          class="card-img-top img-perfil" alt="..." />
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Nombre de medico</h5>
-        <p class="card-text">
-          Especialidad
-        </p>
-      </div> -->
+   
     </div>
   </section>
-  <aside class="col-lg-8 col-sm-6 m-2">
+  <aside class="col-lg-8 col-sm-6 m-2 container-fluid">
     <p class="d-inline-flex gap-1">
       <div class="btn btn-outline-primary w-100"  role="button"  onclick="formMasc(event)">
         Registrar Mascota
@@ -254,17 +159,18 @@
     </div>
 
   </aside>
-  <section class="col-lg-2 col-sm-3 ejemplo">
+  <section class="col-lg-2 col-sm-3 ejemplo container-fluid" >
+   
     <div id="carouselExample" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <h4>12/05/2024</h4>
-        </div>
+            <h4>Turnos Pendientes</h4>
+            <div id="masc-colaTurnos"></div>
+</div>
+        
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
+          <h4>Consultas anteriores</h4>
+          <div id="mas-atendidos"></div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -285,12 +191,10 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.j
 integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 crossorigin="anonymous"
 ></script>
-
-<!-- Actualizar este Script con la ubicacion del app.js -->
 <script src="/Js/global.js"></script>
-
 <script src="/Js/panelUsuarios.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/app.js"></script>
 
 
 </body>
